@@ -2,7 +2,9 @@
   "name": "api",
   "version": "0.0.0",
   "private": true,
-  "scripts": {},
+  "scripts": {
+    "test": "jest"
+  },
   "dependencies": {
     "@libsql/client": "^0.17.0",
     "@types/express": "^4.17.0",
