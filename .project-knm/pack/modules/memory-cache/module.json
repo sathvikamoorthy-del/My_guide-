@@ -1,0 +1,44 @@
+{
+  "id": "memory-cache",
+  "name": "In-memory cache",
+  "version": "1.0.0",
+  "type": "server-cache",
+  "tier": "small",
+  "description": "A bounded in-memory cache (LRU with a time to live) and a middleware that caches successful JSON GET responses per user and tenant.",
+  "provides": ["server-cache"],
+  "requires": ["http-server"],
+  "dependencies": [],
+  "conflicts": [],
+  "config": [
+    { "key": "CACHE_TTL_SECONDS", "question": "How many seconds may a cached response be reused?", "required": false, "default": "30" }
+  ],
+  "env": [],
+  "variants": [
+    {
+      "id": "ts-node-20",
+      "language": "typescript",
+      "framework": "express",
+      "tested": { "node": ">=18", "express": "^4.0.0" },
+      "files": ["src/cache/memoryCache.ts", "src/cache/cacheMiddleware.ts"],
+      "adaptationPoints": [
+        { "file": "src/cache/memoryCache.ts", "what": "size and time-to-live defaults" },
+        { "file": "src/cache/cacheMiddleware.ts", "what": "the cache key (identity fields on the request), which responses may be cached" }
+      ],
+      "extensionPoints": [{ "glue": "middleware", "register": "cacheMiddleware", "order": "inner", "from": "src/cache/cacheMiddleware.ts" }],
+      "tests": { "contract": ["tests/contract/memoryCache.test.ts", "tests/contract/cacheMiddleware.test.ts"], "fit": ["tests/fit/ttl.test.ts"] }
+    },
+    {
+      "id": "js-node-20",
+      "language": "javascript",
+      "framework": "express",
+      "tested": { "node": ">=18", "express": "^4.0.0" },
+      "files": ["src/cache/memoryCache.js", "src/cache/cacheMiddleware.js"],
+      "adaptationPoints": [
+        { "file": "src/cache/memoryCache.js", "what": "size and time-to-live defaults" },
+        { "file": "src/cache/cacheMiddleware.js", "what": "the cache key (identity fields on the request), which responses may be cached" }
+      ],
+      "extensionPoints": [{ "glue": "middleware", "register": "cacheMiddleware", "order": "inner", "from": "src/cache/cacheMiddleware.js" }],
+      "tests": { "contract": ["tests/contract/memoryCache.test.js", "tests/contract/cacheMiddleware.test.js"], "fit": ["tests/fit/ttl.test.js"] }
+    }
+  ]
+}

@@ -1,0 +1,130 @@
+{
+  "id": "react-vite",
+  "name": "React + Vite (web framework)",
+  "version": "1.0.0",
+  "type": "frontend-framework",
+  "tier": "medium",
+  "description": "React 18 app shell on Vite: providers and routes are assembled from the scaffold glue, with a not-found page and an error boundary, a Vite config and the HTML entry.",
+  "provides": [
+    "ui-framework",
+    "router"
+  ],
+  "requires": [],
+  "dependencies": [],
+  "conflicts": [],
+  "config": [
+    {
+      "key": "PORT",
+      "question": "Port for the dev server?",
+      "required": false,
+      "default": "5173"
+    }
+  ],
+  "env": [],
+  "variants": [
+    {
+      "id": "ts-react-18",
+      "language": "typescript",
+      "framework": "react",
+      "tested": {
+        "node": ">=18",
+        "react": "^18.0.0"
+      },
+      "files": [
+        "index.html",
+        "vite.config.ts",
+        "src/main.tsx",
+        "src/app/App.tsx"
+      ],
+      "packages": {
+        "react": "^18.2.0",
+        "react-dom": "^18.2.0",
+        "react-router-dom": "^6.8.0",
+        "vite": "^4.2.0",
+        "@vitejs/plugin-react": "^3.1.0",
+        "@types/react": "^18.2.0",
+        "@types/react-dom": "^18.2.0"
+      },
+      "adaptationPoints": [
+        {
+          "file": "src/app/App.tsx",
+          "what": "router type, not-found and error pages, how providers wrap the routes"
+        },
+        {
+          "file": "src/main.tsx",
+          "what": "mount element, strict mode"
+        },
+        {
+          "file": "vite.config.ts",
+          "what": "port, build options, aliases"
+        },
+        {
+          "file": "index.html",
+          "what": "title, meta tags, root element"
+        }
+      ],
+      "tests": {
+        "contract": [
+          "tests/contract/app.test.tsx",
+          "tests/contract/main.test.tsx",
+          "tests/contract/viteConfig.test.ts"
+        ],
+        "fit": [
+          "tests/fit/glue.test.tsx"
+        ]
+      }
+    },
+    {
+      "id": "js-react-18",
+      "language": "javascript",
+      "framework": "react",
+      "tested": {
+        "node": ">=18",
+        "react": "^18.0.0"
+      },
+      "files": [
+        "index.html",
+        "vite.config.js",
+        "src/main.jsx",
+        "src/app/App.jsx"
+      ],
+      "packages": {
+        "react": "^18.2.0",
+        "react-dom": "^18.2.0",
+        "react-router-dom": "^6.8.0",
+        "vite": "^4.2.0",
+        "@vitejs/plugin-react": "^3.1.0",
+        "@types/react": "^18.2.0",
+        "@types/react-dom": "^18.2.0"
+      },
+      "adaptationPoints": [
+        {
+          "file": "src/app/App.jsx",
+          "what": "router type, not-found and error pages, how providers wrap the routes"
+        },
+        {
+          "file": "src/main.jsx",
+          "what": "mount element, strict mode"
+        },
+        {
+          "file": "vite.config.js",
+          "what": "port, build options, aliases"
+        },
+        {
+          "file": "index.html",
+          "what": "title, meta tags, root element"
+        }
+      ],
+      "tests": {
+        "contract": [
+          "tests/contract/app.test.jsx",
+          "tests/contract/main.test.jsx",
+          "tests/contract/viteConfig.test.js"
+        ],
+        "fit": [
+          "tests/fit/glue.test.jsx"
+        ]
+      }
+    }
+  ]
+}

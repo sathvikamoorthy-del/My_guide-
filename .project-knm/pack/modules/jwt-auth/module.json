@@ -1,0 +1,46 @@
+{
+  "id": "jwt-auth",
+  "name": "JWT authentication",
+  "version": "1.0.0",
+  "type": "auth",
+  "tier": "medium",
+  "description": "Signed access tokens (HS256) and a middleware that identifies the caller (user, tenant, roles) from a bearer token, with guards for routes that need a signed-in user or a role.",
+  "provides": ["auth"],
+  "requires": ["http-server"],
+  "dependencies": [],
+  "conflicts": [],
+  "config": [
+    { "key": "JWT_SECRET", "question": "JWT signing secret (a random string of at least 32 characters; leave empty and a random one is generated into the app's .env)?", "required": true, "secret": true }
+  ],
+  "env": [],
+  "variants": [
+    {
+      "id": "ts-node-20",
+      "language": "typescript",
+      "framework": "express",
+      "tested": { "node": ">=18", "express": "^4.0.0", "jose": "^4.15.0" },
+      "files": ["src/auth/jwt.ts", "src/auth/authMiddleware.ts"],
+      "packages": { "jose": "^4.15.0" },
+      "adaptationPoints": [
+        { "file": "src/auth/jwt.ts", "what": "claim names (tenantId, roles), token lifetime, issuer and audience" },
+        { "file": "src/auth/authMiddleware.ts", "what": "where the token is read from, the shape of req.auth" }
+      ],
+      "extensionPoints": [{ "glue": "middleware", "register": "authenticate", "order": "outer", "from": "src/auth/authMiddleware.ts" }],
+      "tests": { "contract": ["tests/contract/jwt.test.ts", "tests/contract/authMiddleware.test.ts"], "fit": ["tests/fit/default.test.ts"] }
+    },
+    {
+      "id": "js-node-20",
+      "language": "javascript",
+      "framework": "express",
+      "tested": { "node": ">=18", "express": "^4.0.0", "jose": "^4.15.0" },
+      "files": ["src/auth/jwt.js", "src/auth/authMiddleware.js"],
+      "packages": { "jose": "^4.15.0" },
+      "adaptationPoints": [
+        { "file": "src/auth/jwt.js", "what": "claim names (tenantId, roles), token lifetime, issuer and audience" },
+        { "file": "src/auth/authMiddleware.js", "what": "where the token is read from, the shape of req.auth" }
+      ],
+      "extensionPoints": [{ "glue": "middleware", "register": "authenticate", "order": "outer", "from": "src/auth/authMiddleware.js" }],
+      "tests": { "contract": ["tests/contract/jwt.test.js", "tests/contract/authMiddleware.test.js"], "fit": ["tests/fit/default.test.js"] }
+    }
+  ]
+}

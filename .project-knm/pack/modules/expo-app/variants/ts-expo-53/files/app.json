@@ -1,0 +1,16 @@
+{
+  "expo": {
+    "name": "mobile",
+    "slug": "mobile",
+    "scheme": "knm",
+    "platforms": ["ios", "android"],
+    "android": { "package": "com.example.mobile" },
+    "ios": { "bundleIdentifier": "com.example.mobile" },
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "automatic",
+    "plugins": ["expo-router", "expo-secure-store"],
+    "experiments": { "typedRoutes": true },
+    "extra": { "apiUrl": "http://localhost:3000" }
+  }
+}

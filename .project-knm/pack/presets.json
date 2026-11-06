@@ -1,0 +1,170 @@
+{
+  "schemaVersion": 1,
+  "presets": [
+    {
+      "id": "node-api",
+      "name": "Node API (Express)",
+      "description": "One Express API app on Node: Jest tests with a coverage gate, a build script and an audit trail.",
+      "verified": false,
+      "apps": [
+        {
+          "type": "api",
+          "framework": "express",
+          "frameworkVersions": [
+            "4"
+          ],
+          "languages": [
+            "typescript",
+            "javascript"
+          ],
+          "modules": {
+            "backend-framework": "express",
+            "testing": "jest-testing",
+            "build-tools": "node-build",
+            "audit-trail": "audit-trail"
+          }
+        }
+      ]
+    },
+    {
+      "id": "node-api-data",
+      "name": "Node API with data (Express, SQLite, JWT, tenants)",
+      "description": "One Express API app with a SQLite/libSQL database and Drizzle, JWT sign-in, tenant isolation, a response cache, Jest tests, a build script and an audit trail.",
+      "verified": false,
+      "apps": [
+        {
+          "type": "api",
+          "framework": "express",
+          "frameworkVersions": [
+            "4"
+          ],
+          "languages": [
+            "typescript",
+            "javascript"
+          ],
+          "modules": {
+            "backend-framework": "express",
+            "testing": "jest-testing",
+            "build-tools": "node-build",
+            "audit-trail": "audit-trail",
+            "database": "sqlite-database",
+            "orm": "drizzle-sqlite",
+            "auth": "jwt-auth",
+            "multi-tenancy": "multi-tenant",
+            "server-cache": "memory-cache"
+          }
+        }
+      ]
+    },
+    {
+      "id": "node-fullstack",
+      "name": "Node full stack (Express API + React web)",
+      "description": "An Express API with SQLite, Drizzle, JWT, tenant isolation and a cache, plus a React + Vite web app with Chakra UI, Zustand state and Jest.",
+      "verified": true,
+      "apps": [
+        {
+          "type": "api",
+          "framework": "express",
+          "frameworkVersions": [
+            "4"
+          ],
+          "languages": [
+            "typescript",
+            "javascript"
+          ],
+          "modules": {
+            "backend-framework": "express",
+            "testing": "jest-testing",
+            "build-tools": "node-build",
+            "audit-trail": "audit-trail",
+            "database": "sqlite-database",
+            "orm": "drizzle-sqlite",
+            "auth": "jwt-auth",
+            "multi-tenancy": "multi-tenant",
+            "server-cache": "memory-cache"
+          }
+        },
+        {
+          "type": "web",
+          "framework": "react",
+          "frameworkVersions": [
+            "18"
+          ],
+          "languages": [
+            "typescript",
+            "javascript"
+          ],
+          "modules": {
+            "frontend-framework": "react-vite",
+            "styling": "chakra-styling",
+            "state-management": "zustand-state",
+            "testing": "jest-react"
+          }
+        }
+      ],
+      "verifiedAt": "2026-11-05T02:49:21.050Z"
+    },
+    {
+      "id": "node-fullstack-mobile",
+      "name": "Node full stack with mobile (Express API + React web + Expo)",
+      "description": "The Node full stack preset plus an Expo mobile app: Expo Router with tabs, sign-in with secure token storage, React Native Paper and a typed API client.",
+      "verified": true,
+      "apps": [
+        {
+          "type": "api",
+          "framework": "express",
+          "frameworkVersions": [
+            "4"
+          ],
+          "languages": [
+            "typescript",
+            "javascript"
+          ],
+          "modules": {
+            "backend-framework": "express",
+            "testing": "jest-testing",
+            "build-tools": "node-build",
+            "audit-trail": "audit-trail",
+            "database": "sqlite-database",
+            "orm": "drizzle-sqlite",
+            "auth": "jwt-auth",
+            "multi-tenancy": "multi-tenant",
+            "server-cache": "memory-cache"
+          }
+        },
+        {
+          "type": "web",
+          "framework": "react",
+          "frameworkVersions": [
+            "18"
+          ],
+          "languages": [
+            "typescript",
+            "javascript"
+          ],
+          "modules": {
+            "frontend-framework": "react-vite",
+            "styling": "chakra-styling",
+            "state-management": "zustand-state",
+            "testing": "jest-react"
+          }
+        },
+        {
+          "type": "mobile",
+          "framework": "expo",
+          "frameworkVersions": [
+            "53"
+          ],
+          "languages": [
+            "typescript",
+            "javascript"
+          ],
+          "modules": {
+            "mobile-ui": "expo-app"
+          }
+        }
+      ],
+      "verifiedAt": "2026-11-05T02:55:02.433Z"
+    }
+  ]
+}

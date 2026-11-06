@@ -1,0 +1,44 @@
+{
+  "id": "drizzle-sqlite",
+  "name": "Drizzle ORM (SQLite / libSQL)",
+  "version": "1.0.0",
+  "type": "orm",
+  "tier": "small",
+  "description": "Drizzle ORM over the libSQL client of the database module, with a starter schema and a provider that puts the ORM on the app.",
+  "provides": ["orm"],
+  "requires": ["db"],
+  "dependencies": ["sqlite-database"],
+  "conflicts": [],
+  "config": [],
+  "env": [],
+  "variants": [
+    {
+      "id": "ts-node-20",
+      "language": "typescript",
+      "framework": "express",
+      "tested": { "node": ">=18", "express": "^4.0.0", "drizzle-orm": "^0.45.0" },
+      "files": ["src/db/orm.ts", "src/db/schema.ts"],
+      "packages": { "drizzle-orm": "^0.45.0" },
+      "adaptationPoints": [
+        { "file": "src/db/schema.ts", "what": "the app's own tables replace the starter table" },
+        { "file": "src/db/orm.ts", "what": "provider key, schema import" }
+      ],
+      "extensionPoints": [{ "glue": "providers", "register": "ormProvider", "order": "inner", "from": "src/db/orm.ts" }],
+      "tests": { "contract": ["tests/contract/orm.test.ts"], "fit": ["tests/fit/schema.test.ts"] }
+    },
+    {
+      "id": "js-node-20",
+      "language": "javascript",
+      "framework": "express",
+      "tested": { "node": ">=18", "express": "^4.0.0", "drizzle-orm": "^0.45.0" },
+      "files": ["src/db/orm.js", "src/db/schema.js"],
+      "packages": { "drizzle-orm": "^0.45.0" },
+      "adaptationPoints": [
+        { "file": "src/db/schema.js", "what": "the app's own tables replace the starter table" },
+        { "file": "src/db/orm.js", "what": "provider key, schema import" }
+      ],
+      "extensionPoints": [{ "glue": "providers", "register": "ormProvider", "order": "inner", "from": "src/db/orm.js" }],
+      "tests": { "contract": ["tests/contract/orm.test.js"], "fit": ["tests/fit/schema.test.js"] }
+    }
+  ]
+}

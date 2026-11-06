@@ -1,0 +1,52 @@
+{
+  "id": "multi-tenant",
+  "name": "Multi-tenant data isolation",
+  "version": "1.0.0",
+  "type": "multi-tenancy",
+  "tier": "full",
+  "description": "Basic row-level tenant isolation: a tenant_id column, a query wrapper that always scopes by tenant (the only sanctioned data path) and a request middleware that resolves the tenant from the authenticated identity.",
+  "provides": ["multi-tenancy"],
+  "requires": ["http-server"],
+  "dependencies": [],
+  "conflicts": [],
+  "config": [],
+  "env": [],
+  "variants": [
+    {
+      "id": "ts-node-20",
+      "language": "typescript",
+      "framework": "express",
+      "tested": { "node": ">=18", "express": "^4.0.0" },
+      "files": ["src/tenancy/tenantDb.ts", "src/tenancy/tenantContext.ts"],
+      "adaptationPoints": [
+        { "file": "src/tenancy/tenantDb.ts", "what": "executor type for the app's database client, table and column allowlist, export style" },
+        { "file": "src/tenancy/tenantContext.ts", "what": "request/response typings for the app's framework, where the authenticated tenant id lives" }
+      ],
+      "extensionPoints": [
+        { "glue": "middleware", "register": "tenantMiddleware", "order": "inner", "from": "src/tenancy/tenantContext.ts" }
+      ],
+      "tests": {
+        "contract": ["tests/contract/isolation.test.ts", "tests/contract/guards.test.ts"],
+        "fit": ["tests/fit/wiring.test.ts"]
+      }
+    },
+    {
+      "id": "js-node-20",
+      "language": "javascript",
+      "framework": "express",
+      "tested": { "node": ">=18", "express": "^4.0.0" },
+      "files": ["src/tenancy/tenantDb.js", "src/tenancy/tenantContext.js"],
+      "adaptationPoints": [
+        { "file": "src/tenancy/tenantDb.js", "what": "table and column allowlist, export style, how the app's database client is wrapped as an executor" },
+        { "file": "src/tenancy/tenantContext.js", "what": "where the authenticated tenant id lives, export style" }
+      ],
+      "extensionPoints": [
+        { "glue": "middleware", "register": "tenantMiddleware", "order": "inner", "from": "src/tenancy/tenantContext.js" }
+      ],
+      "tests": {
+        "contract": ["tests/contract/isolation.test.js", "tests/contract/guards.test.js"],
+        "fit": ["tests/fit/wiring.test.js"]
+      }
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "id": "sqlite-database",
+  "name": "SQLite / libSQL database",
+  "version": "1.0.0",
+  "type": "database",
+  "tier": "medium",
+  "description": "A libSQL (SQLite or Turso) client created from DATABASE_URL, forward-only migrations with checksums, and a provider that gives the app one database client.",
+  "provides": ["db"],
+  "requires": ["http-server"],
+  "dependencies": [],
+  "conflicts": [],
+  "config": [
+    { "key": "DATABASE_URL", "question": "Database URL (file:./data/app.db for a local file, libsql://... for Turso)?", "required": false, "default": "file:./data/app.db" }
+  ],
+  "env": ["DATABASE_AUTH_TOKEN"],
+  "variants": [
+    {
+      "id": "ts-node-20",
+      "language": "typescript",
+      "framework": "express",
+      "tested": { "node": ">=18", "express": "^4.0.0", "@libsql/client": "^0.17.0" },
+      "files": ["src/db/client.ts", "src/db/migrate.ts", "src/db/provider.ts"],
+      "packages": { "@libsql/client": "^0.17.0" },
+      "adaptationPoints": [
+        { "file": "src/db/client.ts", "what": "default URL, supported URL schemes, how the auth token is read" },
+        { "file": "src/db/migrate.ts", "what": "migration table name, statement splitting" },
+        { "file": "src/db/provider.ts", "what": "the key the client is stored under, app container shape" }
+      ],
+      "extensionPoints": [{ "glue": "providers", "register": "databaseProvider", "order": "outer", "from": "src/db/provider.ts" }],
+      "tests": { "contract": ["tests/contract/client.test.ts", "tests/contract/migrate.test.ts", "tests/contract/provider.test.ts"], "fit": ["tests/fit/wiring.test.ts"] }
+    },
+    {
+      "id": "js-node-20",
+      "language": "javascript",
+      "framework": "express",
+      "tested": { "node": ">=18", "express": "^4.0.0", "@libsql/client": "^0.17.0" },
+      "files": ["src/db/client.js", "src/db/migrate.js", "src/db/provider.js"],
+      "packages": { "@libsql/client": "^0.17.0" },
+      "adaptationPoints": [
+        { "file": "src/db/client.js", "what": "default URL, supported URL schemes, how the auth token is read" },
+        { "file": "src/db/migrate.js", "what": "migration table name, statement splitting" },
+        { "file": "src/db/provider.js", "what": "the key the client is stored under, app container shape" }
+      ],
+      "extensionPoints": [{ "glue": "providers", "register": "databaseProvider", "order": "outer", "from": "src/db/provider.js" }],
+      "tests": { "contract": ["tests/contract/client.test.js", "tests/contract/migrate.test.js", "tests/contract/provider.test.js"], "fit": ["tests/fit/wiring.test.js"] }
+    }
+  ]
+}

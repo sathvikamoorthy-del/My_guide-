@@ -1,0 +1,42 @@
+{
+  "id": "zustand-state",
+  "name": "Zustand state",
+  "version": "1.0.0",
+  "type": "state-management",
+  "tier": "small",
+  "description": "Application state with Zustand: stores with reset and defensive versioned persistence, and a race-safe async hook.",
+  "provides": ["state-management"],
+  "requires": ["ui-framework"],
+  "dependencies": [],
+  "conflicts": [],
+  "config": [],
+  "env": [],
+  "variants": [
+    {
+      "id": "ts-react-18",
+      "language": "typescript",
+      "framework": "react",
+      "tested": { "node": ">=18", "react": "^18.0.0", "zustand": "^4.3.0" },
+      "files": ["src/state/createStore.ts", "src/state/useAsync.ts"],
+      "packages": { "zustand": "^4.3.0" },
+      "adaptationPoints": [
+        { "file": "src/state/createStore.ts", "what": "persistence (storage, key prefix, what is saved)" },
+        { "file": "src/state/useAsync.ts", "what": "state shape, error mapping" }
+      ],
+      "tests": { "contract": ["tests/contract/createStore.test.ts", "tests/contract/useAsync.test.tsx"], "fit": ["tests/fit/default.test.ts"] }
+    },
+    {
+      "id": "js-react-18",
+      "language": "javascript",
+      "framework": "react",
+      "tested": { "node": ">=18", "react": "^18.0.0", "zustand": "^4.3.0" },
+      "files": ["src/state/createStore.js", "src/state/useAsync.js"],
+      "packages": { "zustand": "^4.3.0" },
+      "adaptationPoints": [
+        { "file": "src/state/createStore.js", "what": "persistence (storage, key prefix, what is saved)" },
+        { "file": "src/state/useAsync.js", "what": "state shape, error mapping" }
+      ],
+      "tests": { "contract": ["tests/contract/createStore.test.js", "tests/contract/useAsync.test.jsx"], "fit": ["tests/fit/default.test.js"] }
+    }
+  ]
+}

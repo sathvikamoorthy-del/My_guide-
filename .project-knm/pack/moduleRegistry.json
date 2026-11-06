@@ -1,0 +1,2023 @@
+{
+  "schemaVersion": 1,
+  "languages": [
+    {
+      "id": "typescript",
+      "label": "TypeScript",
+      "runtime": "node",
+      "enabled": true
+    },
+    {
+      "id": "javascript",
+      "label": "JavaScript",
+      "runtime": "node",
+      "enabled": true
+    },
+    {
+      "id": "python",
+      "label": "Python",
+      "runtime": "python",
+      "enabled": false
+    },
+    {
+      "id": "java",
+      "label": "Java",
+      "runtime": "jvm",
+      "enabled": false
+    },
+    {
+      "id": "dotnet",
+      "label": ".NET",
+      "runtime": "dotnet",
+      "enabled": false
+    }
+  ],
+  "capabilities": [
+    {
+      "id": "http-server",
+      "description": "HTTP server / API framework",
+      "exclusive": true,
+      "source": "core"
+    },
+    {
+      "id": "http-client",
+      "description": "Outbound HTTP client",
+      "exclusive": false,
+      "source": "core"
+    },
+    {
+      "id": "ui-framework",
+      "description": "Web UI framework",
+      "exclusive": true,
+      "source": "core"
+    },
+    {
+      "id": "mobile-ui",
+      "description": "Mobile UI framework",
+      "exclusive": true,
+      "source": "core"
+    },
+    {
+      "id": "desktop-ui",
+      "description": "Desktop UI framework",
+      "exclusive": true,
+      "source": "core"
+    },
+    {
+      "id": "db",
+      "description": "Primary database",
+      "exclusive": true,
+      "source": "core"
+    },
+    {
+      "id": "vector-db",
+      "description": "Vector database",
+      "exclusive": false,
+      "source": "core"
+    },
+    {
+      "id": "orm",
+      "description": "ORM / data access",
+      "exclusive": true,
+      "source": "core"
+    },
+    {
+      "id": "file-storage",
+      "description": "File/object storage",
+      "exclusive": false,
+      "source": "core"
+    },
+    {
+      "id": "auth",
+      "description": "Authentication",
+      "exclusive": true,
+      "source": "core"
+    },
+    {
+      "id": "authorization",
+      "description": "Authorization / RBAC",
+      "exclusive": false,
+      "source": "core"
+    },
+    {
+      "id": "sessions",
+      "description": "Session management",
+      "exclusive": false,
+      "source": "core"
+    },
+    {
+      "id": "sso",
+      "description": "SSO / enterprise auth",
+      "exclusive": false,
+      "source": "core"
+    },
+    {
+      "id": "server-cache",
+      "description": "Server-side cache",
+      "exclusive": true,
+      "source": "core"
+    },
+    {
+      "id": "client-cache",
+      "description": "Client-side data cache",
+      "exclusive": true,
+      "source": "core"
+    },
+    {
+      "id": "state-management",
+      "description": "Client state management",
+      "exclusive": true,
+      "source": "core"
+    },
+    {
+      "id": "forms",
+      "description": "Form handling",
+      "exclusive": false,
+      "source": "core"
+    },
+    {
+      "id": "styling",
+      "description": "Styling system / component library",
+      "exclusive": true,
+      "source": "core"
+    },
+    {
+      "id": "router",
+      "description": "Client routing",
+      "exclusive": false,
+      "source": "core"
+    },
+    {
+      "id": "i18n",
+      "description": "Localization",
+      "exclusive": false,
+      "source": "core"
+    },
+    {
+      "id": "logging",
+      "description": "Logging",
+      "exclusive": true,
+      "source": "core"
+    },
+    {
+      "id": "audit",
+      "description": "Audit trail",
+      "exclusive": false,
+      "source": "core"
+    },
+    {
+      "id": "error-tracking",
+      "description": "Error tracking",
+      "exclusive": false,
+      "source": "core"
+    },
+    {
+      "id": "observability",
+      "description": "Tracing / observability",
+      "exclusive": false,
+      "source": "core"
+    },
+    {
+      "id": "health-check",
+      "description": "Health endpoints",
+      "exclusive": false,
+      "source": "core"
+    },
+    {
+      "id": "rate-limiting",
+      "description": "Rate limiting",
+      "exclusive": false,
+      "source": "core"
+    },
+    {
+      "id": "cors",
+      "description": "CORS policy",
+      "exclusive": false,
+      "source": "core"
+    },
+    {
+      "id": "input-validation",
+      "description": "Input validation",
+      "exclusive": false,
+      "source": "core"
+    },
+    {
+      "id": "background-jobs",
+      "description": "Background jobs / queues",
+      "exclusive": false,
+      "source": "core"
+    },
+    {
+      "id": "realtime",
+      "description": "Real-time / pub-sub",
+      "exclusive": false,
+      "source": "core"
+    },
+    {
+      "id": "notifications",
+      "description": "Notification delivery",
+      "exclusive": false,
+      "source": "core"
+    },
+    {
+      "id": "payments",
+      "description": "Payments",
+      "exclusive": false,
+      "source": "core"
+    },
+    {
+      "id": "multi-tenancy",
+      "description": "Multi-tenancy / data isolation",
+      "exclusive": true,
+      "source": "core"
+    },
+    {
+      "id": "feature-flags",
+      "description": "Feature flags",
+      "exclusive": false,
+      "source": "core"
+    },
+    {
+      "id": "search",
+      "description": "Search",
+      "exclusive": false,
+      "source": "core"
+    },
+    {
+      "id": "llm",
+      "description": "LLM integration",
+      "exclusive": false,
+      "source": "core"
+    },
+    {
+      "id": "testing",
+      "description": "Test runner",
+      "exclusive": true,
+      "source": "core"
+    },
+    {
+      "id": "build",
+      "description": "Build tooling",
+      "exclusive": true,
+      "source": "core"
+    },
+    {
+      "id": "linting",
+      "description": "Linting / formatting",
+      "exclusive": true,
+      "source": "core"
+    },
+    {
+      "id": "deployment",
+      "description": "Deployment target",
+      "exclusive": true,
+      "source": "core"
+    },
+    {
+      "id": "containerization",
+      "description": "Containerization / IaC",
+      "exclusive": false,
+      "source": "core"
+    },
+    {
+      "id": "ci-cd",
+      "description": "CI/CD pipeline",
+      "exclusive": false,
+      "source": "core"
+    },
+    {
+      "id": "secrets-config",
+      "description": "Secrets / env config",
+      "exclusive": false,
+      "source": "core"
+    }
+  ],
+  "types": [
+    {
+      "id": "database",
+      "name": "Primary database",
+      "group": "Data & Storage",
+      "role": "module",
+      "appTypes": [
+        "api",
+        "etl",
+        "db"
+      ],
+      "crossCutting": false,
+      "examples": [
+        "Turso/SQLite",
+        "Postgres",
+        "MySQL",
+        "MongoDB",
+        "DynamoDB"
+      ],
+      "status": "ready",
+      "source": "scaffolding-pickers"
+    },
+    {
+      "id": "vector-database",
+      "name": "Vector database",
+      "group": "Data & Storage",
+      "role": "module",
+      "appTypes": [
+        "api",
+        "etl",
+        "db"
+      ],
+      "crossCutting": false,
+      "examples": [
+        "pgvector",
+        "Pinecone",
+        "Weaviate",
+        "Chroma",
+        "none"
+      ],
+      "status": "planned",
+      "source": "scaffolding-pickers"
+    },
+    {
+      "id": "orm",
+      "name": "ORM / data access",
+      "group": "Data & Storage",
+      "role": "module",
+      "appTypes": [
+        "api",
+        "etl"
+      ],
+      "crossCutting": false,
+      "examples": [
+        "Drizzle",
+        "Prisma",
+        "TypeORM",
+        "raw SQL"
+      ],
+      "status": "ready",
+      "source": "scaffolding-pickers"
+    },
+    {
+      "id": "id-generation",
+      "name": "ID generation strategy",
+      "group": "Data & Storage",
+      "role": "module",
+      "appTypes": [
+        "api",
+        "etl"
+      ],
+      "crossCutting": false,
+      "examples": [
+        "UUID",
+        "ULID",
+        "auto-increment"
+      ],
+      "status": "planned",
+      "source": "scaffolding-pickers"
+    },
+    {
+      "id": "pagination",
+      "name": "Pagination style",
+      "group": "Data & Storage",
+      "role": "module",
+      "appTypes": [
+        "api",
+        "etl"
+      ],
+      "crossCutting": false,
+      "examples": [
+        "Offset-based",
+        "cursor-based"
+      ],
+      "status": "planned",
+      "source": "scaffolding-pickers"
+    },
+    {
+      "id": "soft-delete",
+      "name": "Soft delete vs hard delete",
+      "group": "Data & Storage",
+      "role": "module",
+      "appTypes": [
+        "api",
+        "etl"
+      ],
+      "crossCutting": false,
+      "examples": [
+        "Soft (deleted_at flag)",
+        "hard delete"
+      ],
+      "status": "planned",
+      "source": "scaffolding-pickers"
+    },
+    {
+      "id": "file-storage",
+      "name": "File/object storage",
+      "group": "Data & Storage",
+      "role": "module",
+      "appTypes": [
+        "api",
+        "etl"
+      ],
+      "crossCutting": false,
+      "examples": [
+        "Firebase Storage",
+        "S3",
+        "local disk"
+      ],
+      "status": "planned",
+      "source": "scaffolding-pickers"
+    },
+    {
+      "id": "llm-provider",
+      "name": "LLM provider / AI integration",
+      "group": "AI / LLM",
+      "role": "module",
+      "appTypes": [
+        "api"
+      ],
+      "crossCutting": false,
+      "examples": [
+        "Anthropic (Claude)",
+        "OpenAI",
+        "self-hosted (Ollama)",
+        "none"
+      ],
+      "status": "planned",
+      "source": "scaffolding-pickers"
+    },
+    {
+      "id": "backend-framework",
+      "name": "Backend framework",
+      "group": "Backend & API",
+      "role": "framework",
+      "appTypes": [
+        "api"
+      ],
+      "crossCutting": false,
+      "examples": [
+        "Express",
+        "Fastify",
+        "NestJS",
+        "Hono"
+      ],
+      "status": "ready",
+      "source": "scaffolding-pickers"
+    },
+    {
+      "id": "api-style",
+      "name": "API style",
+      "group": "Backend & API",
+      "role": "module",
+      "appTypes": [
+        "api"
+      ],
+      "crossCutting": false,
+      "examples": [
+        "REST",
+        "GraphQL",
+        "tRPC"
+      ],
+      "status": "planned",
+      "source": "scaffolding-pickers"
+    },
+    {
+      "id": "api-docs",
+      "name": "API documentation generation",
+      "group": "Backend & API",
+      "role": "module",
+      "appTypes": [
+        "api"
+      ],
+      "crossCutting": false,
+      "examples": [
+        "Swagger/OpenAPI auto-gen",
+        "manual",
+        "none"
+      ],
+      "status": "planned",
+      "source": "scaffolding-pickers"
+    },
+    {
+      "id": "api-versioning",
+      "name": "API versioning strategy",
+      "group": "Backend & API",
+      "role": "module",
+      "appTypes": [
+        "api"
+      ],
+      "crossCutting": false,
+      "examples": [
+        "URL path (/v1)",
+        "header-based",
+        "none"
+      ],
+      "status": "planned",
+      "source": "scaffolding-pickers"
+    },
+    {
+      "id": "input-validation",
+      "name": "Input validation",
+      "group": "Backend & API",
+      "role": "module",
+      "appTypes": [
+        "api"
+      ],
+      "crossCutting": true,
+      "examples": [
+        "Zod",
+        "Yup",
+        "class-validator",
+        "manual"
+      ],
+      "status": "planned",
+      "source": "scaffolding-pickers"
+    },
+    {
+      "id": "rate-limiting",
+      "name": "Rate limiting / throttling",
+      "group": "Backend & API",
+      "role": "module",
+      "appTypes": [
+        "api"
+      ],
+      "crossCutting": true,
+      "examples": [
+        "Token bucket",
+        "sliding window",
+        "provider-managed (Cloudflare)",
+        "none"
+      ],
+      "status": "planned",
+      "source": "scaffolding-pickers"
+    },
+    {
+      "id": "cors",
+      "name": "CORS policy",
+      "group": "Backend & API",
+      "role": "module",
+      "appTypes": [
+        "api"
+      ],
+      "crossCutting": true,
+      "examples": [
+        "Allow-list",
+        "wildcard (dev only)",
+        "none"
+      ],
+      "status": "planned",
+      "source": "scaffolding-pickers"
+    },
+    {
+      "id": "compression",
+      "name": "Request/response compression",
+      "group": "Backend & API",
+      "role": "module",
+      "appTypes": [
+        "api"
+      ],
+      "crossCutting": true,
+      "examples": [
+        "gzip/brotli",
+        "none"
+      ],
+      "status": "planned",
+      "source": "scaffolding-pickers"
+    },
+    {
+      "id": "idempotency",
+      "name": "Idempotency key handling",
+      "group": "Backend & API",
+      "role": "module",
+      "appTypes": [
+        "api"
+      ],
+      "crossCutting": true,
+      "examples": [
+        "Required on writes",
+        "not enforced"
+      ],
+      "status": "planned",
+      "source": "scaffolding-pickers"
+    },
+    {
+      "id": "frontend-framework",
+      "name": "Frontend framework",
+      "group": "Frontend & UI",
+      "role": "framework",
+      "appTypes": [
+        "web"
+      ],
+      "crossCutting": false,
+      "examples": [
+        "React",
+        "Vue",
+        "Svelte",
+        "Angular"
+      ],
+      "status": "ready",
+      "source": "scaffolding-pickers"
+    },
+    {
+      "id": "desktop-ui",
+      "name": "Desktop UI",
+      "group": "Frontend & UI",
+      "role": "framework",
+      "appTypes": [
+        "desktop"
+      ],
+      "crossCutting": false,
+      "examples": [
+        "Electron",
+        "Tauri",
+        "none (web-only)"
+      ],
+      "status": "planned",
+      "source": "scaffolding-pickers"
+    },
+    {
+      "id": "mobile-ui",
+      "name": "Mobile UI",
+      "group": "Frontend & UI",
+      "role": "framework",
+      "appTypes": [
+        "mobile"
+      ],
+      "crossCutting": false,
+      "examples": [
+        "React Native",
+        "Flutter",
+        "none"
+      ],
+      "status": "ready",
+      "source": "scaffolding-pickers"
+    },
+    {
+      "id": "state-management",
+      "name": "State management",
+      "group": "Frontend & UI",
+      "role": "module",
+      "appTypes": [
+        "web",
+        "mobile"
+      ],
+      "crossCutting": false,
+      "examples": [
+        "Redux",
+        "Zustand",
+        "Context API"
+      ],
+      "status": "ready",
+      "source": "scaffolding-pickers"
+    },
+    {
+      "id": "forms",
+      "name": "Form handling",
+      "group": "Frontend & UI",
+      "role": "module",
+      "appTypes": [
+        "web",
+        "mobile"
+      ],
+      "crossCutting": false,
+      "examples": [
+        "React Hook Form",
+        "Formik",
+        "native"
+      ],
+      "status": "planned",
+      "source": "scaffolding-pickers"
+    },
+    {
+      "id": "styling",
+      "name": "Styling approach",
+      "group": "Frontend & UI",
+      "role": "module",
+      "appTypes": [
+        "web",
+        "mobile"
+      ],
+      "crossCutting": false,
+      "examples": [
+        "Tailwind",
+        "CSS Modules",
+        "styled-components"
+      ],
+      "status": "ready",
+      "source": "scaffolding-pickers"
+    },
+    {
+      "id": "ui-library",
+      "name": "Component/design library",
+      "group": "Frontend & UI",
+      "role": "module",
+      "appTypes": [
+        "web",
+        "mobile"
+      ],
+      "crossCutting": false,
+      "examples": [
+        "MUI",
+        "Chakra",
+        "shadcn/ui",
+        "custom"
+      ],
+      "status": "planned",
+      "source": "scaffolding-pickers"
+    },
+    {
+      "id": "pwa",
+      "name": "PWA / offline support",
+      "group": "Frontend & UI",
+      "role": "module",
+      "appTypes": [
+        "web",
+        "mobile"
+      ],
+      "crossCutting": false,
+      "examples": [
+        "Service worker + cache",
+        "none"
+      ],
+      "status": "planned",
+      "source": "scaffolding-pickers"
+    },
+    {
+      "id": "auth",
+      "name": "Authentication",
+      "group": "Auth & Security",
+      "role": "module",
+      "appTypes": [
+        "api",
+        "web",
+        "mobile"
+      ],
+      "crossCutting": false,
+      "examples": [
+        "Firebase Auth",
+        "Auth0",
+        "OAuth/OIDC",
+        "custom JWT"
+      ],
+      "status": "ready",
+      "source": "scaffolding-pickers"
+    },
+    {
+      "id": "sso",
+      "name": "SSO / enterprise auth",
+      "group": "Auth & Security",
+      "role": "module",
+      "appTypes": [
+        "api",
+        "web",
+        "mobile"
+      ],
+      "crossCutting": false,
+      "examples": [
+        "SAML",
+        "OIDC enterprise",
+        "none"
+      ],
+      "status": "planned",
+      "source": "scaffolding-pickers"
+    },
+    {
+      "id": "authorization",
+      "name": "Authorization / RBAC",
+      "group": "Auth & Security",
+      "role": "module",
+      "appTypes": [
+        "api",
+        "web",
+        "mobile"
+      ],
+      "crossCutting": true,
+      "examples": [
+        "Role-based",
+        "attribute-based",
+        "policy engine (OPA)",
+        "none"
+      ],
+      "status": "planned",
+      "source": "scaffolding-pickers"
+    },
+    {
+      "id": "sessions",
+      "name": "Session management",
+      "group": "Auth & Security",
+      "role": "module",
+      "appTypes": [
+        "api",
+        "web",
+        "mobile"
+      ],
+      "crossCutting": true,
+      "examples": [
+        "Stateless JWT",
+        "server sessions (Redis-backed)",
+        "cookie-based"
+      ],
+      "status": "planned",
+      "source": "scaffolding-pickers"
+    },
+    {
+      "id": "captcha",
+      "name": "CAPTCHA / bot protection",
+      "group": "Auth & Security",
+      "role": "module",
+      "appTypes": [
+        "api",
+        "web",
+        "mobile"
+      ],
+      "crossCutting": false,
+      "examples": [
+        "reCAPTCHA",
+        "hCaptcha",
+        "none"
+      ],
+      "status": "planned",
+      "source": "scaffolding-pickers"
+    },
+    {
+      "id": "server-cache",
+      "name": "Server-side caching",
+      "group": "Caching & Performance",
+      "role": "module",
+      "appTypes": [
+        "api",
+        "web",
+        "mobile",
+        "etl"
+      ],
+      "crossCutting": false,
+      "examples": [
+        "Redis",
+        "in-memory (LRU)",
+        "Memcached",
+        "none"
+      ],
+      "status": "ready",
+      "source": "scaffolding-pickers"
+    },
+    {
+      "id": "client-cache",
+      "name": "Client-side caching",
+      "group": "Caching & Performance",
+      "role": "module",
+      "appTypes": [
+        "web",
+        "mobile"
+      ],
+      "crossCutting": false,
+      "examples": [
+        "TanStack Query",
+        "SWR",
+        "localStorage",
+        "service worker"
+      ],
+      "status": "planned",
+      "source": "scaffolding-pickers"
+    },
+    {
+      "id": "cdn",
+      "name": "CDN",
+      "group": "Caching & Performance",
+      "role": "module",
+      "appTypes": [
+        "web"
+      ],
+      "crossCutting": false,
+      "examples": [
+        "Cloudflare",
+        "Fastly",
+        "provider-default",
+        "none"
+      ],
+      "status": "planned",
+      "source": "scaffolding-pickers"
+    },
+    {
+      "id": "background-jobs",
+      "name": "Background jobs / queueing",
+      "group": "Messaging & Real-time",
+      "role": "module",
+      "appTypes": [
+        "api"
+      ],
+      "crossCutting": false,
+      "examples": [
+        "BullMQ",
+        "Cloud Tasks",
+        "SQS",
+        "none"
+      ],
+      "status": "planned",
+      "source": "scaffolding-pickers"
+    },
+    {
+      "id": "realtime",
+      "name": "Real-time / pub-sub",
+      "group": "Messaging & Real-time",
+      "role": "module",
+      "appTypes": [
+        "api"
+      ],
+      "crossCutting": false,
+      "examples": [
+        "WebSocket",
+        "Server-Sent Events",
+        "Firebase Realtime DB",
+        "none"
+      ],
+      "status": "planned",
+      "source": "scaffolding-pickers"
+    },
+    {
+      "id": "notifications",
+      "name": "Notification delivery",
+      "group": "Messaging & Real-time",
+      "role": "module",
+      "appTypes": [
+        "api"
+      ],
+      "crossCutting": false,
+      "examples": [
+        "Email (SMTP/SendGrid)",
+        "push",
+        "SMS",
+        "none"
+      ],
+      "status": "planned",
+      "source": "scaffolding-pickers"
+    },
+    {
+      "id": "email-templating",
+      "name": "Email templating",
+      "group": "Messaging & Real-time",
+      "role": "module",
+      "appTypes": [
+        "api"
+      ],
+      "crossCutting": false,
+      "examples": [
+        "React Email",
+        "Handlebars",
+        "plain text"
+      ],
+      "status": "planned",
+      "source": "scaffolding-pickers"
+    },
+    {
+      "id": "payments",
+      "name": "Payment gateway",
+      "group": "Payments & Billing",
+      "role": "module",
+      "appTypes": [
+        "api"
+      ],
+      "crossCutting": false,
+      "examples": [
+        "Razorpay",
+        "Stripe",
+        "PayPal",
+        "none"
+      ],
+      "status": "planned",
+      "source": "scaffolding-pickers"
+    },
+    {
+      "id": "multi-tenancy",
+      "name": "Multi-tenancy strategy",
+      "group": "Payments & Billing",
+      "role": "module",
+      "appTypes": [
+        "api"
+      ],
+      "crossCutting": true,
+      "examples": [
+        "Shared schema",
+        "schema-per-tenant",
+        "DB-per-tenant",
+        "none"
+      ],
+      "status": "ready",
+      "source": "scaffolding-pickers"
+    },
+    {
+      "id": "money",
+      "name": "Money/currency handling",
+      "group": "Payments & Billing",
+      "role": "module",
+      "appTypes": [
+        "api"
+      ],
+      "crossCutting": false,
+      "examples": [
+        "dinero.js",
+        "integer-cents convention",
+        "none"
+      ],
+      "status": "planned",
+      "source": "scaffolding-pickers"
+    },
+    {
+      "id": "logging",
+      "name": "Logging",
+      "group": "Observability & Ops",
+      "role": "module",
+      "appTypes": [
+        "api",
+        "web",
+        "mobile",
+        "etl"
+      ],
+      "crossCutting": true,
+      "examples": [
+        "Structured (pino/winston)",
+        "console",
+        "cloud logging (Cloud Logging/Datadog)"
+      ],
+      "status": "planned",
+      "source": "scaffolding-pickers"
+    },
+    {
+      "id": "error-tracking",
+      "name": "Error tracking / monitoring",
+      "group": "Observability & Ops",
+      "role": "module",
+      "appTypes": [
+        "api",
+        "web",
+        "mobile",
+        "etl"
+      ],
+      "crossCutting": true,
+      "examples": [
+        "Sentry",
+        "Rollbar",
+        "none"
+      ],
+      "status": "planned",
+      "source": "scaffolding-pickers"
+    },
+    {
+      "id": "audit-trail",
+      "name": "Audit trails",
+      "group": "Observability & Ops",
+      "role": "module",
+      "appTypes": [
+        "api",
+        "web",
+        "mobile",
+        "etl"
+      ],
+      "crossCutting": true,
+      "examples": [
+        "Dedicated audit table",
+        "event sourcing",
+        "none"
+      ],
+      "status": "ready",
+      "source": "scaffolding-pickers"
+    },
+    {
+      "id": "observability",
+      "name": "Observability / tracing",
+      "group": "Observability & Ops",
+      "role": "module",
+      "appTypes": [
+        "api",
+        "web",
+        "mobile",
+        "etl"
+      ],
+      "crossCutting": true,
+      "examples": [
+        "OpenTelemetry",
+        "provider-native (Cloud Trace)",
+        "none"
+      ],
+      "status": "planned",
+      "source": "scaffolding-pickers"
+    },
+    {
+      "id": "health-check",
+      "name": "Health check endpoints",
+      "group": "Observability & Ops",
+      "role": "module",
+      "appTypes": [
+        "api",
+        "web",
+        "mobile",
+        "etl"
+      ],
+      "crossCutting": true,
+      "examples": [
+        "Liveness/readiness probes",
+        "none"
+      ],
+      "status": "planned",
+      "source": "scaffolding-pickers"
+    },
+    {
+      "id": "analytics",
+      "name": "Analytics/telemetry",
+      "group": "Observability & Ops",
+      "role": "module",
+      "appTypes": [
+        "api",
+        "web",
+        "mobile",
+        "etl"
+      ],
+      "crossCutting": true,
+      "examples": [
+        "Segment",
+        "Mixpanel",
+        "PostHog",
+        "none"
+      ],
+      "status": "planned",
+      "source": "scaffolding-pickers"
+    },
+    {
+      "id": "deployment",
+      "name": "Hosting/deployment target",
+      "group": "Infra & Deployment",
+      "role": "module",
+      "appTypes": [
+        "api",
+        "web",
+        "mobile",
+        "etl",
+        "desktop"
+      ],
+      "crossCutting": false,
+      "examples": [
+        "Firebase",
+        "Vercel",
+        "AWS",
+        "self-hosted"
+      ],
+      "status": "planned",
+      "source": "scaffolding-pickers"
+    },
+    {
+      "id": "containerization",
+      "name": "Containerization / IaC",
+      "group": "Infra & Deployment",
+      "role": "module",
+      "appTypes": [
+        "api",
+        "web",
+        "mobile",
+        "etl",
+        "desktop"
+      ],
+      "crossCutting": false,
+      "examples": [
+        "Docker",
+        "Docker + Terraform",
+        "none (PaaS-managed)"
+      ],
+      "status": "planned",
+      "source": "scaffolding-pickers"
+    },
+    {
+      "id": "ci-cd",
+      "name": "CI/CD provider",
+      "group": "Infra & Deployment",
+      "role": "module",
+      "appTypes": [
+        "api",
+        "web",
+        "mobile",
+        "etl",
+        "desktop"
+      ],
+      "crossCutting": false,
+      "examples": [
+        "GitHub Actions",
+        "CircleCI",
+        "none"
+      ],
+      "status": "planned",
+      "source": "scaffolding-pickers"
+    },
+    {
+      "id": "testing",
+      "name": "Testing framework",
+      "group": "Infra & Deployment",
+      "role": "module",
+      "appTypes": [
+        "api",
+        "web",
+        "mobile",
+        "etl",
+        "desktop"
+      ],
+      "crossCutting": false,
+      "examples": [
+        "Jest",
+        "Vitest",
+        "Playwright"
+      ],
+      "status": "ready",
+      "source": "scaffolding-pickers"
+    },
+    {
+      "id": "package-manager",
+      "name": "Package manager",
+      "group": "Infra & Deployment",
+      "role": "module",
+      "appTypes": [
+        "api",
+        "web",
+        "mobile",
+        "etl",
+        "desktop"
+      ],
+      "crossCutting": false,
+      "examples": [
+        "npm",
+        "pnpm",
+        "yarn"
+      ],
+      "status": "planned",
+      "source": "scaffolding-pickers"
+    },
+    {
+      "id": "monorepo",
+      "name": "Monorepo tooling",
+      "group": "Infra & Deployment",
+      "role": "module",
+      "appTypes": [
+        "api",
+        "web",
+        "mobile",
+        "etl",
+        "desktop"
+      ],
+      "crossCutting": false,
+      "examples": [
+        "Turborepo",
+        "Nx",
+        "Lerna",
+        "none"
+      ],
+      "status": "planned",
+      "source": "scaffolding-pickers"
+    },
+    {
+      "id": "linting",
+      "name": "Linting/formatting",
+      "group": "Infra & Deployment",
+      "role": "module",
+      "appTypes": [
+        "api",
+        "web",
+        "mobile",
+        "etl",
+        "desktop"
+      ],
+      "crossCutting": false,
+      "examples": [
+        "ESLint + Prettier",
+        "Biome",
+        "none"
+      ],
+      "status": "planned",
+      "source": "scaffolding-pickers"
+    },
+    {
+      "id": "secrets-config",
+      "name": "Env/secrets config management",
+      "group": "Infra & Deployment",
+      "role": "module",
+      "appTypes": [
+        "api",
+        "web",
+        "mobile",
+        "etl",
+        "desktop"
+      ],
+      "crossCutting": true,
+      "examples": [
+        "dotenv",
+        "cloud secrets manager (e.g. Secret Manager)"
+      ],
+      "status": "planned",
+      "source": "scaffolding-pickers"
+    },
+    {
+      "id": "search",
+      "name": "Search",
+      "group": "Third-Party Integrations & Misc",
+      "role": "module",
+      "appTypes": [
+        "api",
+        "web",
+        "mobile",
+        "etl"
+      ],
+      "crossCutting": false,
+      "examples": [
+        "DB full-text",
+        "Elasticsearch",
+        "Algolia",
+        "none"
+      ],
+      "status": "planned",
+      "source": "scaffolding-pickers"
+    },
+    {
+      "id": "maps",
+      "name": "Maps / geolocation",
+      "group": "Third-Party Integrations & Misc",
+      "role": "module",
+      "appTypes": [
+        "web",
+        "mobile"
+      ],
+      "crossCutting": false,
+      "examples": [
+        "Google Maps",
+        "Mapbox",
+        "none"
+      ],
+      "status": "planned",
+      "source": "scaffolding-pickers"
+    },
+    {
+      "id": "chat-widget",
+      "name": "In-app chat/support widget",
+      "group": "Third-Party Integrations & Misc",
+      "role": "module",
+      "appTypes": [
+        "web",
+        "mobile"
+      ],
+      "crossCutting": false,
+      "examples": [
+        "Intercom",
+        "Crisp",
+        "none"
+      ],
+      "status": "planned",
+      "source": "scaffolding-pickers"
+    },
+    {
+      "id": "i18n",
+      "name": "i18n / localization",
+      "group": "Third-Party Integrations & Misc",
+      "role": "module",
+      "appTypes": [
+        "web",
+        "mobile"
+      ],
+      "crossCutting": true,
+      "examples": [
+        "i18next",
+        "react-intl",
+        "none"
+      ],
+      "status": "planned",
+      "source": "scaffolding-pickers"
+    },
+    {
+      "id": "datetime",
+      "name": "Date/time & timezone handling",
+      "group": "Third-Party Integrations & Misc",
+      "role": "module",
+      "appTypes": [
+        "api",
+        "web",
+        "mobile",
+        "etl"
+      ],
+      "crossCutting": false,
+      "examples": [
+        "date-fns",
+        "Luxon",
+        "native `Intl`"
+      ],
+      "status": "planned",
+      "source": "scaffolding-pickers"
+    },
+    {
+      "id": "feature-flags",
+      "name": "Feature flags",
+      "group": "Third-Party Integrations & Misc",
+      "role": "module",
+      "appTypes": [
+        "api",
+        "web",
+        "mobile",
+        "etl"
+      ],
+      "crossCutting": true,
+      "examples": [
+        "LaunchDarkly",
+        "GrowthBook",
+        "custom/env-based",
+        "none"
+      ],
+      "status": "planned",
+      "source": "scaffolding-pickers"
+    },
+    {
+      "id": "retry",
+      "name": "Retry/backoff for external calls",
+      "group": "Third-Party Integrations & Misc",
+      "role": "module",
+      "appTypes": [
+        "api",
+        "web",
+        "mobile",
+        "etl"
+      ],
+      "crossCutting": true,
+      "examples": [
+        "Exponential backoff library",
+        "none"
+      ],
+      "status": "planned",
+      "source": "scaffolding-pickers"
+    },
+    {
+      "id": "build-tools",
+      "name": "Build tools",
+      "group": "Infra & Deployment",
+      "role": "module",
+      "appTypes": [
+        "api",
+        "web",
+        "mobile",
+        "etl",
+        "desktop"
+      ],
+      "crossCutting": false,
+      "examples": [
+        "tsc",
+        "Vite",
+        "esbuild"
+      ],
+      "status": "ready",
+      "source": "added (not in pickers): needed by every app, see STORY-053"
+    }
+  ],
+  "modules": [
+    {
+      "id": "multi-tenant",
+      "name": "Multi-tenant data isolation",
+      "type": "multi-tenancy",
+      "tier": "full",
+      "version": "1.0.0",
+      "description": "Basic row-level tenant isolation: a tenant_id column, a query wrapper that always scopes by tenant (the only sanctioned data path) and a request middleware that resolves the tenant from the authenticated identity.",
+      "path": "modules/multi-tenant",
+      "source": "local",
+      "verified": true,
+      "provides": [
+        "multi-tenancy"
+      ],
+      "requires": [
+        "http-server"
+      ],
+      "dependencies": [],
+      "conflicts": [],
+      "variants": [
+        {
+          "id": "ts-node-20",
+          "language": "typescript",
+          "framework": "express",
+          "tested": {
+            "node": ">=18",
+            "express": "^4.0.0"
+          }
+        },
+        {
+          "id": "js-node-20",
+          "language": "javascript",
+          "framework": "express",
+          "tested": {
+            "node": ">=18",
+            "express": "^4.0.0"
+          }
+        }
+      ]
+    },
+    {
+      "id": "audit-trail",
+      "name": "Audit trail",
+      "type": "audit-trail",
+      "tier": "small",
+      "version": "1.0.0",
+      "description": "Append-only audit trail: records who did what, to what and when, with secret redaction and a request middleware for state-changing calls.",
+      "path": "modules/audit-trail",
+      "source": "local",
+      "verified": true,
+      "provides": [
+        "audit"
+      ],
+      "requires": [
+        "http-server"
+      ],
+      "dependencies": [],
+      "conflicts": [],
+      "variants": [
+        {
+          "id": "ts-node-20",
+          "language": "typescript",
+          "framework": "express",
+          "tested": {
+            "node": ">=18",
+            "express": "^4.0.0"
+          }
+        },
+        {
+          "id": "js-node-20",
+          "language": "javascript",
+          "framework": "express",
+          "tested": {
+            "node": ">=18",
+            "express": "^4.0.0"
+          }
+        }
+      ]
+    },
+    {
+      "id": "express",
+      "name": "Express (Node API framework)",
+      "type": "backend-framework",
+      "tier": "medium",
+      "version": "1.0.0",
+      "description": "Express 4 application factory that assembles the scaffold glue (providers, middleware, routes) with JSON parsing, JSON 404 and a safe error handler, plus a server entry.",
+      "path": "modules/express",
+      "source": "local",
+      "verified": true,
+      "provides": [
+        "http-server"
+      ],
+      "requires": [],
+      "dependencies": [],
+      "conflicts": [],
+      "variants": [
+        {
+          "id": "ts-node-20",
+          "language": "typescript",
+          "framework": "express",
+          "tested": {
+            "node": ">=18",
+            "express": "^4.18.0"
+          }
+        },
+        {
+          "id": "js-node-20",
+          "language": "javascript",
+          "framework": "express",
+          "tested": {
+            "node": ">=18",
+            "express": "^4.18.0"
+          }
+        }
+      ]
+    },
+    {
+      "id": "node-build",
+      "name": "Node build",
+      "type": "build-tools",
+      "tier": "small",
+      "version": "1.0.0",
+      "description": "A build script for Node apps: type-checked TypeScript compile to dist/ (or a plain copy for JavaScript), with stale output removed and a failing exit code on errors.",
+      "path": "modules/node-build",
+      "source": "local",
+      "verified": true,
+      "provides": [
+        "build"
+      ],
+      "requires": [],
+      "dependencies": [],
+      "conflicts": [],
+      "variants": [
+        {
+          "id": "ts-node-20",
+          "language": "typescript",
+          "framework": "express",
+          "tested": {
+            "node": ">=18",
+            "typescript": "^5.0.0"
+          }
+        },
+        {
+          "id": "js-node-20",
+          "language": "javascript",
+          "framework": "express",
+          "tested": {
+            "node": ">=18"
+          }
+        }
+      ]
+    },
+    {
+      "id": "jest-testing",
+      "name": "Jest testing",
+      "type": "testing",
+      "tier": "small",
+      "version": "1.0.0",
+      "description": "Jest setup for Node apps: configuration with a coverage gate on application code, and small helpers for handler and middleware tests.",
+      "path": "modules/jest-testing",
+      "source": "local",
+      "verified": true,
+      "provides": [
+        "testing"
+      ],
+      "requires": [],
+      "dependencies": [],
+      "conflicts": [],
+      "variants": [
+        {
+          "id": "ts-node-20",
+          "language": "typescript",
+          "framework": "express",
+          "tested": {
+            "node": ">=18",
+            "jest": "^29.0.0"
+          }
+        },
+        {
+          "id": "js-node-20",
+          "language": "javascript",
+          "framework": "express",
+          "tested": {
+            "node": ">=18",
+            "jest": "^29.0.0"
+          }
+        }
+      ]
+    },
+    {
+      "id": "sqlite-database",
+      "name": "SQLite / libSQL database",
+      "type": "database",
+      "tier": "medium",
+      "version": "1.0.0",
+      "description": "A libSQL (SQLite or Turso) client created from DATABASE_URL, forward-only migrations with checksums, and a provider that gives the app one database client.",
+      "path": "modules/sqlite-database",
+      "source": "local",
+      "verified": true,
+      "provides": [
+        "db"
+      ],
+      "requires": [
+        "http-server"
+      ],
+      "dependencies": [],
+      "conflicts": [],
+      "variants": [
+        {
+          "id": "ts-node-20",
+          "language": "typescript",
+          "framework": "express",
+          "tested": {
+            "node": ">=18",
+            "express": "^4.0.0",
+            "@libsql/client": "^0.17.0"
+          }
+        },
+        {
+          "id": "js-node-20",
+          "language": "javascript",
+          "framework": "express",
+          "tested": {
+            "node": ">=18",
+            "express": "^4.0.0",
+            "@libsql/client": "^0.17.0"
+          }
+        }
+      ]
+    },
+    {
+      "id": "drizzle-sqlite",
+      "name": "Drizzle ORM (SQLite / libSQL)",
+      "type": "orm",
+      "tier": "small",
+      "version": "1.0.0",
+      "description": "Drizzle ORM over the libSQL client of the database module, with a starter schema and a provider that puts the ORM on the app.",
+      "path": "modules/drizzle-sqlite",
+      "source": "local",
+      "verified": true,
+      "provides": [
+        "orm"
+      ],
+      "requires": [
+        "db"
+      ],
+      "dependencies": [
+        "sqlite-database"
+      ],
+      "conflicts": [],
+      "variants": [
+        {
+          "id": "ts-node-20",
+          "language": "typescript",
+          "framework": "express",
+          "tested": {
+            "node": ">=18",
+            "express": "^4.0.0",
+            "drizzle-orm": "^0.45.0"
+          }
+        },
+        {
+          "id": "js-node-20",
+          "language": "javascript",
+          "framework": "express",
+          "tested": {
+            "node": ">=18",
+            "express": "^4.0.0",
+            "drizzle-orm": "^0.45.0"
+          }
+        }
+      ]
+    },
+    {
+      "id": "memory-cache",
+      "name": "In-memory cache",
+      "type": "server-cache",
+      "tier": "small",
+      "version": "1.0.0",
+      "description": "A bounded in-memory cache (LRU with a time to live) and a middleware that caches successful JSON GET responses per user and tenant.",
+      "path": "modules/memory-cache",
+      "source": "local",
+      "verified": true,
+      "provides": [
+        "server-cache"
+      ],
+      "requires": [
+        "http-server"
+      ],
+      "dependencies": [],
+      "conflicts": [],
+      "variants": [
+        {
+          "id": "ts-node-20",
+          "language": "typescript",
+          "framework": "express",
+          "tested": {
+            "node": ">=18",
+            "express": "^4.0.0"
+          }
+        },
+        {
+          "id": "js-node-20",
+          "language": "javascript",
+          "framework": "express",
+          "tested": {
+            "node": ">=18",
+            "express": "^4.0.0"
+          }
+        }
+      ]
+    },
+    {
+      "id": "jwt-auth",
+      "name": "JWT authentication",
+      "type": "auth",
+      "tier": "medium",
+      "version": "1.0.0",
+      "description": "Signed access tokens (HS256) and a middleware that identifies the caller (user, tenant, roles) from a bearer token, with guards for routes that need a signed-in user or a role.",
+      "path": "modules/jwt-auth",
+      "source": "local",
+      "verified": true,
+      "provides": [
+        "auth"
+      ],
+      "requires": [
+        "http-server"
+      ],
+      "dependencies": [],
+      "conflicts": [],
+      "variants": [
+        {
+          "id": "ts-node-20",
+          "language": "typescript",
+          "framework": "express",
+          "tested": {
+            "node": ">=18",
+            "express": "^4.0.0",
+            "jose": "^4.15.0"
+          }
+        },
+        {
+          "id": "js-node-20",
+          "language": "javascript",
+          "framework": "express",
+          "tested": {
+            "node": ">=18",
+            "express": "^4.0.0",
+            "jose": "^4.15.0"
+          }
+        }
+      ]
+    },
+    {
+      "id": "react-vite",
+      "name": "React + Vite (web framework)",
+      "type": "frontend-framework",
+      "tier": "medium",
+      "version": "1.0.0",
+      "description": "React 18 app shell on Vite: providers and routes are assembled from the scaffold glue, with a not-found page and an error boundary, a Vite config and the HTML entry.",
+      "path": "modules/react-vite",
+      "source": "local",
+      "verified": true,
+      "provides": [
+        "ui-framework",
+        "router"
+      ],
+      "requires": [],
+      "dependencies": [],
+      "conflicts": [],
+      "variants": [
+        {
+          "id": "ts-react-18",
+          "language": "typescript",
+          "framework": "react",
+          "tested": {
+            "node": ">=18",
+            "react": "^18.0.0"
+          }
+        },
+        {
+          "id": "js-react-18",
+          "language": "javascript",
+          "framework": "react",
+          "tested": {
+            "node": ">=18",
+            "react": "^18.0.0"
+          }
+        }
+      ]
+    },
+    {
+      "id": "chakra-styling",
+      "name": "Chakra UI styling",
+      "type": "styling",
+      "tier": "medium",
+      "version": "1.0.0",
+      "description": "Chakra UI for web apps: a provider (outermost) that merges the design tokens registered in the theme glue, and a starter token set (brand colors, fonts, color mode).",
+      "path": "modules/chakra-styling",
+      "source": "local",
+      "verified": true,
+      "provides": [
+        "styling"
+      ],
+      "requires": [
+        "ui-framework"
+      ],
+      "dependencies": [],
+      "conflicts": [],
+      "variants": [
+        {
+          "id": "ts-react-18",
+          "language": "typescript",
+          "framework": "react",
+          "tested": {
+            "node": ">=18",
+            "react": "^18.0.0",
+            "@chakra-ui/react": "^2.8.0"
+          }
+        },
+        {
+          "id": "js-react-18",
+          "language": "javascript",
+          "framework": "react",
+          "tested": {
+            "node": ">=18",
+            "react": "^18.0.0",
+            "@chakra-ui/react": "^2.8.0"
+          }
+        }
+      ]
+    },
+    {
+      "id": "zustand-state",
+      "name": "Zustand state",
+      "type": "state-management",
+      "tier": "small",
+      "version": "1.0.0",
+      "description": "Application state with Zustand: stores with reset and defensive versioned persistence, and a race-safe async hook.",
+      "path": "modules/zustand-state",
+      "source": "local",
+      "verified": true,
+      "provides": [
+        "state-management"
+      ],
+      "requires": [
+        "ui-framework"
+      ],
+      "dependencies": [],
+      "conflicts": [],
+      "variants": [
+        {
+          "id": "ts-react-18",
+          "language": "typescript",
+          "framework": "react",
+          "tested": {
+            "node": ">=18",
+            "react": "^18.0.0",
+            "zustand": "^4.3.0"
+          }
+        },
+        {
+          "id": "js-react-18",
+          "language": "javascript",
+          "framework": "react",
+          "tested": {
+            "node": ">=18",
+            "react": "^18.0.0",
+            "zustand": "^4.3.0"
+          }
+        }
+      ]
+    },
+    {
+      "id": "jest-react",
+      "name": "Jest for React",
+      "type": "testing",
+      "tier": "small",
+      "version": "1.0.0",
+      "description": "Jest for React apps: jsdom, Testing Library matchers and browser polyfills, a renderApp helper that wraps components in the app's providers and a router, and a coverage gate.",
+      "path": "modules/jest-react",
+      "source": "local",
+      "verified": true,
+      "provides": [
+        "testing"
+      ],
+      "requires": [
+        "ui-framework"
+      ],
+      "dependencies": [],
+      "conflicts": [],
+      "variants": [
+        {
+          "id": "ts-react-18",
+          "language": "typescript",
+          "framework": "react",
+          "tested": {
+            "node": ">=18",
+            "react": "^18.0.0",
+            "jest": "^29.0.0"
+          }
+        },
+        {
+          "id": "js-react-18",
+          "language": "javascript",
+          "framework": "react",
+          "tested": {
+            "node": ">=18",
+            "react": "^18.0.0",
+            "jest": "^29.0.0"
+          }
+        }
+      ]
+    },
+    {
+      "id": "expo-app",
+      "name": "Expo app (React Native)",
+      "type": "mobile-ui",
+      "tier": "full",
+      "version": "1.0.0",
+      "description": "Mobile app on Expo: Expo Router with bottom tabs, auth gate with secure token storage, React Native Paper, a typed API client, and loading / empty / error states.",
+      "path": "modules/expo-app",
+      "source": "local",
+      "verified": true,
+      "provides": [
+        "mobile-ui",
+        "router",
+        "auth",
+        "http-client"
+      ],
+      "requires": [],
+      "dependencies": [],
+      "conflicts": [],
+      "variants": [
+        {
+          "id": "ts-expo-53",
+          "language": "typescript",
+          "framework": "expo",
+          "tested": {
+            "node": ">=18",
+            "expo": "~53.0.0",
+            "react-native": "~0.79.0"
+          }
+        },
+        {
+          "id": "js-expo-53",
+          "language": "javascript",
+          "framework": "expo",
+          "tested": {
+            "node": ">=18",
+            "expo": "~53.0.0",
+            "react-native": "~0.79.0"
+          }
+        }
+      ]
+    }
+  ]
+}

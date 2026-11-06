@@ -1,0 +1,42 @@
+{
+  "id": "jest-testing",
+  "name": "Jest testing",
+  "version": "1.0.0",
+  "type": "testing",
+  "tier": "small",
+  "description": "Jest setup for Node apps: configuration with a coverage gate on application code, and small helpers for handler and middleware tests.",
+  "provides": ["testing"],
+  "requires": [],
+  "dependencies": [],
+  "conflicts": [],
+  "config": [],
+  "env": [],
+  "variants": [
+    {
+      "id": "ts-node-20",
+      "language": "typescript",
+      "framework": "express",
+      "tested": { "node": ">=18", "jest": "^29.0.0" },
+      "files": ["jest.config.js", "src/testing/testUtils.ts"],
+      "packages": { "jest": "^29.0.0", "ts-jest": "^29.0.0", "@types/jest": "^29.0.0" },
+      "adaptationPoints": [
+        { "file": "jest.config.js", "what": "roots, test match pattern, coverage thresholds and exclusions" },
+        { "file": "src/testing/testUtils.ts", "what": "request/response shapes for the app's framework" }
+      ],
+      "tests": { "contract": ["tests/contract/config.test.ts", "tests/contract/testUtils.test.ts"], "fit": ["tests/fit/layout.test.ts"] }
+    },
+    {
+      "id": "js-node-20",
+      "language": "javascript",
+      "framework": "express",
+      "tested": { "node": ">=18", "jest": "^29.0.0" },
+      "files": ["jest.config.js", "src/testing/testUtils.js"],
+      "packages": { "jest": "^29.0.0" },
+      "adaptationPoints": [
+        { "file": "jest.config.js", "what": "roots, test match pattern, coverage thresholds and exclusions" },
+        { "file": "src/testing/testUtils.js", "what": "request/response shapes for the app's framework" }
+      ],
+      "tests": { "contract": ["tests/contract/config.test.js", "tests/contract/testUtils.test.js"], "fit": ["tests/fit/layout.test.js"] }
+    }
+  ]
+}

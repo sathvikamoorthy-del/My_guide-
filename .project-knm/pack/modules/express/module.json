@@ -1,0 +1,50 @@
+{
+  "id": "express",
+  "name": "Express (Node API framework)",
+  "version": "1.0.0",
+  "type": "backend-framework",
+  "tier": "medium",
+  "description": "Express 4 application factory that assembles the scaffold glue (providers, middleware, routes) with JSON parsing, JSON 404 and a safe error handler, plus a server entry.",
+  "provides": ["http-server"],
+  "requires": [],
+  "dependencies": [],
+  "conflicts": [],
+  "config": [
+    { "key": "PORT", "question": "Port the API listens on?", "required": false, "default": "3000" }
+  ],
+  "env": [],
+  "variants": [
+    {
+      "id": "ts-node-20",
+      "language": "typescript",
+      "framework": "express",
+      "tested": { "node": ">=18", "express": "^4.18.0" },
+      "files": ["src/http/app.ts", "src/http/server.ts"],
+      "packages": { "express": "^4.18.0", "@types/express": "^4.17.0" },
+      "adaptationPoints": [
+        { "file": "src/http/app.ts", "what": "body size limit, error response shape, 404 shape, framework version idioms" },
+        { "file": "src/http/server.ts", "what": "glue import paths, port handling" }
+      ],
+      "tests": {
+        "contract": ["tests/contract/app.test.ts", "tests/contract/server.test.ts"],
+        "fit": ["tests/fit/glue.test.ts"]
+      }
+    },
+    {
+      "id": "js-node-20",
+      "language": "javascript",
+      "framework": "express",
+      "tested": { "node": ">=18", "express": "^4.18.0" },
+      "files": ["src/http/app.js", "src/http/server.js"],
+      "packages": { "express": "^4.18.0" },
+      "adaptationPoints": [
+        { "file": "src/http/app.js", "what": "body size limit, error response shape, 404 shape, framework version idioms" },
+        { "file": "src/http/server.js", "what": "glue import paths, port handling" }
+      ],
+      "tests": {
+        "contract": ["tests/contract/app.test.js", "tests/contract/server.test.js"],
+        "fit": ["tests/fit/glue.test.js"]
+      }
+    }
+  ]
+}

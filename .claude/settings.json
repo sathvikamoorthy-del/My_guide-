@@ -1,0 +1,22 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(node .project-knm/tools/knm-api.js:*)",
+      "Bash(node .project-knm/tools/knm-module.js:*)",
+      "Bash(node .project-knm/tools/knm-context.js:*)",
+      "Bash(git status:*)",
+      "Bash(git rev-parse:*)",
+      "Bash(git checkout:*)",
+      "Bash(git clean:*)",
+      "Bash(git branch:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git diff:*)",
+      "Bash(git log:*)",
+      "Read",
+      "Edit(/docs/**)",
+      "Edit(/.project-knm/**)",
+      "Edit(/.knm/**)"
+    ]
+  }
+}

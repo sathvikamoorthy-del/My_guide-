@@ -1,0 +1,50 @@
+{
+  "id": "chakra-styling",
+  "name": "Chakra UI styling",
+  "version": "1.0.0",
+  "type": "styling",
+  "tier": "medium",
+  "description": "Chakra UI for web apps: a provider (outermost) that merges the design tokens registered in the theme glue, and a starter token set (brand colors, fonts, color mode).",
+  "provides": ["styling"],
+  "requires": ["ui-framework"],
+  "dependencies": [],
+  "conflicts": [],
+  "config": [],
+  "env": [],
+  "variants": [
+    {
+      "id": "ts-react-18",
+      "language": "typescript",
+      "framework": "react",
+      "tested": { "node": ">=18", "react": "^18.0.0", "@chakra-ui/react": "^2.8.0" },
+      "files": ["src/styling/tokens.ts", "src/styling/ChakraAppProvider.tsx"],
+      "packages": { "@chakra-ui/react": "^2.8.0", "@emotion/react": "^11.10.5", "@emotion/styled": "^11.10.5", "framer-motion": "^10.0.0" },
+      "adaptationPoints": [
+        { "file": "src/styling/tokens.ts", "what": "the brand colors, fonts and color-mode defaults" },
+        { "file": "src/styling/ChakraAppProvider.tsx", "what": "how token sets are merged, extra Chakra provider options" }
+      ],
+      "extensionPoints": [
+        { "glue": "providers", "register": "ChakraAppProvider", "order": "outer", "from": "src/styling/ChakraAppProvider.tsx" },
+        { "glue": "theme", "register": "chakraTokens", "from": "src/styling/tokens.ts" }
+      ],
+      "tests": { "contract": ["tests/contract/theme.test.tsx"], "fit": ["tests/fit/glue.test.tsx"] }
+    },
+    {
+      "id": "js-react-18",
+      "language": "javascript",
+      "framework": "react",
+      "tested": { "node": ">=18", "react": "^18.0.0", "@chakra-ui/react": "^2.8.0" },
+      "files": ["src/styling/tokens.js", "src/styling/ChakraAppProvider.jsx"],
+      "packages": { "@chakra-ui/react": "^2.8.0", "@emotion/react": "^11.10.5", "@emotion/styled": "^11.10.5", "framer-motion": "^10.0.0" },
+      "adaptationPoints": [
+        { "file": "src/styling/tokens.js", "what": "the brand colors, fonts and color-mode defaults" },
+        { "file": "src/styling/ChakraAppProvider.jsx", "what": "how token sets are merged, extra Chakra provider options" }
+      ],
+      "extensionPoints": [
+        { "glue": "providers", "register": "ChakraAppProvider", "order": "outer", "from": "src/styling/ChakraAppProvider.jsx" },
+        { "glue": "theme", "register": "chakraTokens", "from": "src/styling/tokens.js" }
+      ],
+      "tests": { "contract": ["tests/contract/theme.test.jsx"], "fit": ["tests/fit/glue.test.jsx"] }
+    }
+  ]
+}

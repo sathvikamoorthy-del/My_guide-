@@ -1,0 +1,44 @@
+{
+  "id": "jest-react",
+  "name": "Jest for React",
+  "version": "1.0.0",
+  "type": "testing",
+  "tier": "small",
+  "description": "Jest for React apps: jsdom, Testing Library matchers and browser polyfills, a renderApp helper that wraps components in the app's providers and a router, and a coverage gate.",
+  "provides": ["testing"],
+  "requires": ["ui-framework"],
+  "dependencies": [],
+  "conflicts": [],
+  "config": [],
+  "env": [],
+  "variants": [
+    {
+      "id": "ts-react-18",
+      "language": "typescript",
+      "framework": "react",
+      "tested": { "node": ">=18", "react": "^18.0.0", "jest": "^29.0.0" },
+      "files": ["jest.config.js", "src/testing/setup.ts", "src/testing/render.tsx"],
+      "packages": { "jest": "^29.0.0", "ts-jest": "^29.0.0", "@types/jest": "^29.0.0", "jest-environment-jsdom": "^29.0.0", "@testing-library/react": "^14.0.0", "@testing-library/jest-dom": "^6.0.0" },
+      "adaptationPoints": [
+        { "file": "jest.config.js", "what": "roots, test match pattern, coverage thresholds and exclusions, style/asset stubs" },
+        { "file": "src/testing/setup.ts", "what": "polyfills the app's components need" },
+        { "file": "src/testing/render.tsx", "what": "which providers and router wrap a rendered component" }
+      ],
+      "tests": { "contract": ["tests/contract/setup.test.ts", "tests/contract/render.test.tsx", "tests/contract/config.test.ts"], "fit": ["tests/fit/layout.test.ts"] }
+    },
+    {
+      "id": "js-react-18",
+      "language": "javascript",
+      "framework": "react",
+      "tested": { "node": ">=18", "react": "^18.0.0", "jest": "^29.0.0" },
+      "files": ["jest.config.js", "src/testing/setup.js", "src/testing/render.jsx"],
+      "packages": { "jest": "^29.0.0", "ts-jest": "^29.0.0", "jest-environment-jsdom": "^29.0.0", "@testing-library/react": "^14.0.0", "@testing-library/jest-dom": "^6.0.0" },
+      "adaptationPoints": [
+        { "file": "jest.config.js", "what": "roots, test match pattern, coverage thresholds and exclusions, style/asset stubs" },
+        { "file": "src/testing/setup.js", "what": "polyfills the app's components need" },
+        { "file": "src/testing/render.jsx", "what": "which providers and router wrap a rendered component" }
+      ],
+      "tests": { "contract": ["tests/contract/setup.test.js", "tests/contract/render.test.jsx", "tests/contract/config.test.js"], "fit": ["tests/fit/layout.test.js"] }
+    }
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "id": "audit-trail",
+  "name": "Audit trail",
+  "version": "1.0.0",
+  "type": "audit-trail",
+  "tier": "small",
+  "description": "Append-only audit trail: records who did what, to what and when, with secret redaction and a request middleware for state-changing calls.",
+  "provides": ["audit"],
+  "requires": ["http-server"],
+  "dependencies": [],
+  "conflicts": [],
+  "config": [],
+  "env": [],
+  "variants": [
+    {
+      "id": "ts-node-20",
+      "language": "typescript",
+      "framework": "express",
+      "tested": { "node": ">=18", "express": "^4.0.0" },
+      "files": ["src/audit/auditTrail.ts", "src/audit/auditMiddleware.ts"],
+      "adaptationPoints": [
+        { "file": "src/audit/auditTrail.ts", "what": "sink implementation, redaction key list, export style" },
+        { "file": "src/audit/auditMiddleware.ts", "what": "where the actor id lives on the request, which methods are recorded" }
+      ],
+      "extensionPoints": [
+        { "glue": "middleware", "register": "auditMiddleware", "order": "inner", "from": "src/audit/auditMiddleware.ts" }
+      ],
+      "tests": {
+        "contract": ["tests/contract/auditTrail.test.ts", "tests/contract/auditMiddleware.test.ts"],
+        "fit": ["tests/fit/wiring.test.ts"]
+      }
+    },
+    {
+      "id": "js-node-20",
+      "language": "javascript",
+      "framework": "express",
+      "tested": { "node": ">=18", "express": "^4.0.0" },
+      "files": ["src/audit/auditTrail.js", "src/audit/auditMiddleware.js"],
+      "adaptationPoints": [
+        { "file": "src/audit/auditTrail.js", "what": "sink implementation, redaction key list, export style" },
+        { "file": "src/audit/auditMiddleware.js", "what": "where the actor id lives on the request, which methods are recorded" }
+      ],
+      "extensionPoints": [
+        { "glue": "middleware", "register": "auditMiddleware", "order": "inner", "from": "src/audit/auditMiddleware.js" }
+      ],
+      "tests": {
+        "contract": ["tests/contract/auditTrail.test.js", "tests/contract/auditMiddleware.test.js"],
+        "fit": ["tests/fit/wiring.test.js"]
+      }
+    }
+  ]
+}

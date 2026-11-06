@@ -1,0 +1,39 @@
+{
+  "id": "node-build",
+  "name": "Node build",
+  "version": "1.0.0",
+  "type": "build-tools",
+  "tier": "small",
+  "description": "A build script for Node apps: type-checked TypeScript compile to dist/ (or a plain copy for JavaScript), with stale output removed and a failing exit code on errors.",
+  "provides": ["build"],
+  "requires": [],
+  "dependencies": [],
+  "conflicts": [],
+  "config": [],
+  "env": [],
+  "variants": [
+    {
+      "id": "ts-node-20",
+      "language": "typescript",
+      "framework": "express",
+      "tested": { "node": ">=18", "typescript": "^5.0.0" },
+      "files": ["scripts/build.js"],
+      "packages": { "typescript": "^5.0.0" },
+      "adaptationPoints": [
+        { "file": "scripts/build.js", "what": "output directory, tsconfig path, extra compiler flags" }
+      ],
+      "tests": { "contract": ["tests/contract/build.test.ts"], "fit": ["tests/fit/project.test.ts"] }
+    },
+    {
+      "id": "js-node-20",
+      "language": "javascript",
+      "framework": "express",
+      "tested": { "node": ">=18" },
+      "files": ["scripts/build.js"],
+      "adaptationPoints": [
+        { "file": "scripts/build.js", "what": "source and output directories, which files count as tests" }
+      ],
+      "tests": { "contract": ["tests/contract/build.test.js"], "fit": ["tests/fit/project.test.js"] }
+    }
+  ]
+}

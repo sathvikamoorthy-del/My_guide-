@@ -1,0 +1,41 @@
+<!doctype html>
+<!-- knm-managed: v1 version: 2: Bundled with the KNM extension (KNM-077, engine from the walkthrough skill). Feedback is off in this copy. -->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="data:,">
+  <title>Walkthrough</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="bar">
+    <div class="bar-left"><span class="bar-tag">WALKTHROUGH</span> <strong id="bar-title">List</strong></div>
+    <div class="bar-controls" id="bar-controls" hidden>
+      <button id="btn-device" class="bar-btn" title="Phone view" aria-label="Phone view" aria-pressed="false" hidden>📱</button>
+      <button id="btn-back" class="bar-btn" title="Back" aria-label="Back">←</button>
+      <span id="bar-progress" class="bar-progress" role="status"></span>
+      <button id="btn-restart" class="bar-btn" title="Restart" aria-label="Restart">↻</button>
+      <button id="btn-exit" class="bar-btn" title="Exit" aria-label="Exit">✕</button>
+    </div>
+  </header>
+
+  <main id="catalogue" class="catalogue">
+    <div class="bar-user" id="bar-user" hidden><span id="user-name"></span> <button id="btn-signin" class="catalogue-signout">Sign in with Google to give feedback</button><button id="btn-signout" class="catalogue-signout" hidden>Sign out</button></div>
+    <h1>Choose a walkthrough</h1>
+    <div id="cards" class="cards"></div>
+  </main>
+
+  <section id="stage" class="stage" hidden>
+    <div class="frame-wrap">
+      <div id="frame" class="frame"></div>
+      <aside id="floater" class="floater" hidden></aside>
+    </div>
+  </section>
+
+  <aside id="feedback" class="floater fb" hidden></aside>
+  <div id="popup" class="overlay" hidden></div>
+  <div id="hint" class="hint" role="status" hidden></div>
+  <script type="module" src="src/main.js?v=13"></script>
+</body>
+</html>
