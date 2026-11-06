@@ -1,3 +1,20 @@
 # KNM
 .claude/requirements.json
 .knm/
+
+# Local env files (secrets never committed)
+.env
+.env.local
+**/.env
+**/.env.local
+
+# Dependencies and build output
+node_modules/
+dist/
+coverage/
+
+# Local SQLite data
+*.db
+*.db-journal
+*.db-wal
+*.db-shm

@@ -1,0 +1,511 @@
+{
+  "schemaVersion": 1,
+  "modules": [
+    {
+      "app": "web",
+      "type": "frontend-framework",
+      "id": "react-vite",
+      "version": "1.0.0",
+      "variant": "ts-react-18",
+      "adaptedFrom": null,
+      "injectedFiles": [
+        {
+          "path": "apps/web/index.html",
+          "templateHash": "3dbcf875b7dfb41c393c51e420eeb0daa1801b8518a8aef92a38e2a11a587346",
+          "adaptedHash": "3dbcf875b7dfb41c393c51e420eeb0daa1801b8518a8aef92a38e2a11a587346"
+        },
+        {
+          "path": "apps/web/vite.config.ts",
+          "templateHash": "d425f3ef6a844f48712fbdc5eb37d7c2668920ed29718930fdd2316450134a61",
+          "adaptedHash": "d425f3ef6a844f48712fbdc5eb37d7c2668920ed29718930fdd2316450134a61"
+        },
+        {
+          "path": "apps/web/src/main.tsx",
+          "templateHash": "a783c12c84c260c4498387cf4bb7041bf05a74a7e696cc1dc41bad3dba0c9694",
+          "adaptedHash": "a783c12c84c260c4498387cf4bb7041bf05a74a7e696cc1dc41bad3dba0c9694"
+        },
+        {
+          "path": "apps/web/src/app/App.tsx",
+          "templateHash": "5887e8bb545e5f2807b23ff93ff87057420984cb8618b530bbf174ffaaf49e17",
+          "adaptedHash": "5887e8bb545e5f2807b23ff93ff87057420984cb8618b530bbf174ffaaf49e17"
+        },
+        {
+          "path": "apps/web/tests/modules/react-vite/contract/app.test.tsx",
+          "templateHash": "1c56a5b1e6ed945460d22633b1dd879728c32fea397ff17351ea40b6203e0f38",
+          "adaptedHash": "1c56a5b1e6ed945460d22633b1dd879728c32fea397ff17351ea40b6203e0f38"
+        },
+        {
+          "path": "apps/web/tests/modules/react-vite/contract/main.test.tsx",
+          "templateHash": "7c8efbfd4934aade571a9619649feeee1a8f44e0046372cd86109eac36faab64",
+          "adaptedHash": "7c8efbfd4934aade571a9619649feeee1a8f44e0046372cd86109eac36faab64"
+        },
+        {
+          "path": "apps/web/tests/modules/react-vite/contract/viteConfig.test.ts",
+          "templateHash": "d21914bfc5a8dd3c21be1752b996f4322aee824e5ba085cac44787888610fb5a",
+          "adaptedHash": "d21914bfc5a8dd3c21be1752b996f4322aee824e5ba085cac44787888610fb5a"
+        },
+        {
+          "path": "apps/web/tests/modules/react-vite/fit/glue.test.tsx",
+          "templateHash": "e16b668fb953bab236fb7ad8b60e2f768b3597137be37edf760169d6e886fbf1",
+          "adaptedHash": "e16b668fb953bab236fb7ad8b60e2f768b3597137be37edf760169d6e886fbf1"
+        }
+      ],
+      "answers": {
+        "PORT": "5173"
+      },
+      "adaptedAt": "2026-11-06T16:00:11.155Z"
+    },
+    {
+      "app": "web",
+      "type": "styling",
+      "id": "chakra-styling",
+      "version": "1.0.0",
+      "variant": "ts-react-18",
+      "adaptedFrom": null,
+      "injectedFiles": [
+        {
+          "path": "apps/web/src/styling/tokens.ts",
+          "templateHash": "90f21aa4dd78342ccd209749cae135a4f624e373e2d5a81f33102614be9f57ec",
+          "adaptedHash": "90f21aa4dd78342ccd209749cae135a4f624e373e2d5a81f33102614be9f57ec"
+        },
+        {
+          "path": "apps/web/src/styling/ChakraAppProvider.tsx",
+          "templateHash": "4ac83357a42dfaa78e61aa0e1547f7b5220f33bd117076da181463a0950ea82a",
+          "adaptedHash": "4ac83357a42dfaa78e61aa0e1547f7b5220f33bd117076da181463a0950ea82a"
+        },
+        {
+          "path": "apps/web/tests/modules/chakra-styling/contract/theme.test.tsx",
+          "templateHash": "60ce23fa2b888676b7820c6e7d5aac23495ca607a55f64849a28903f2dd36939",
+          "adaptedHash": "60ce23fa2b888676b7820c6e7d5aac23495ca607a55f64849a28903f2dd36939"
+        },
+        {
+          "path": "apps/web/tests/modules/chakra-styling/fit/glue.test.tsx",
+          "templateHash": "36b29159f720f916adde33f88972d2473c33fffbd1225111fb01981c77b2183a",
+          "adaptedHash": "36b29159f720f916adde33f88972d2473c33fffbd1225111fb01981c77b2183a"
+        }
+      ],
+      "answers": {},
+      "adaptedAt": "2026-11-06T16:00:13.353Z"
+    },
+    {
+      "app": "web",
+      "type": "state-management",
+      "id": "zustand-state",
+      "version": "1.0.0",
+      "variant": "ts-react-18",
+      "adaptedFrom": null,
+      "injectedFiles": [
+        {
+          "path": "apps/web/src/state/createStore.ts",
+          "templateHash": "d94c1d3b802ee2249e802f59f2e565b2722b73ea057d92460d3cc41587829a82",
+          "adaptedHash": "d94c1d3b802ee2249e802f59f2e565b2722b73ea057d92460d3cc41587829a82"
+        },
+        {
+          "path": "apps/web/src/state/useAsync.ts",
+          "templateHash": "ea6c6cf230989fb0099f9f27269230380634ebca0afd5028999cdcfdef8550c1",
+          "adaptedHash": "ea6c6cf230989fb0099f9f27269230380634ebca0afd5028999cdcfdef8550c1"
+        },
+        {
+          "path": "apps/web/tests/modules/zustand-state/contract/createStore.test.ts",
+          "templateHash": "e3f726eb5265d61fe59ce7775a4d1d26df75168dee8ea4942eb8f7904e315b4e",
+          "adaptedHash": "e3f726eb5265d61fe59ce7775a4d1d26df75168dee8ea4942eb8f7904e315b4e"
+        },
+        {
+          "path": "apps/web/tests/modules/zustand-state/contract/useAsync.test.tsx",
+          "templateHash": "30fb610899ae244e11a23366b3c92d8bdd9be33482a3080947bbdc44b391c274",
+          "adaptedHash": "30fb610899ae244e11a23366b3c92d8bdd9be33482a3080947bbdc44b391c274"
+        },
+        {
+          "path": "apps/web/tests/modules/zustand-state/fit/default.test.ts",
+          "templateHash": "6c9d250af5dee044e9adf30b3c9e86857c05dc208ba5b7e87306cd4097ab02c3",
+          "adaptedHash": "6c9d250af5dee044e9adf30b3c9e86857c05dc208ba5b7e87306cd4097ab02c3"
+        }
+      ],
+      "answers": {},
+      "adaptedAt": "2026-11-06T16:00:15.061Z"
+    },
+    {
+      "app": "web",
+      "type": "testing",
+      "id": "jest-react",
+      "version": "1.0.0",
+      "variant": "ts-react-18",
+      "adaptedFrom": null,
+      "injectedFiles": [
+        {
+          "path": "apps/web/jest.config.js",
+          "templateHash": "d4c06ff6a8f6c05f59cebb940ab515214299fd4dea6a64f21136e7e9e14f4a16",
+          "adaptedHash": "d4c06ff6a8f6c05f59cebb940ab515214299fd4dea6a64f21136e7e9e14f4a16"
+        },
+        {
+          "path": "apps/web/src/testing/setup.ts",
+          "templateHash": "d92be0174433d00c935e77549c1e314a3489fbb779ad915a228bea826b03a3e0",
+          "adaptedHash": "d92be0174433d00c935e77549c1e314a3489fbb779ad915a228bea826b03a3e0"
+        },
+        {
+          "path": "apps/web/src/testing/render.tsx",
+          "templateHash": "58714831493d633922c84a05b9f7641e61994f50fb7f3f8d13742ae45df4b851",
+          "adaptedHash": "58714831493d633922c84a05b9f7641e61994f50fb7f3f8d13742ae45df4b851"
+        },
+        {
+          "path": "apps/web/tests/modules/jest-react/contract/config.test.ts",
+          "templateHash": "8bdb706d8dadeb3d5b057e24468e4426d849c40e4e0e92150f5d8d3234366b88",
+          "adaptedHash": "8bdb706d8dadeb3d5b057e24468e4426d849c40e4e0e92150f5d8d3234366b88"
+        },
+        {
+          "path": "apps/web/tests/modules/jest-react/contract/render.test.tsx",
+          "templateHash": "5320c01d5fe05b34003d07731a5860fc9e449babc71f36d1434d8ae46295a7b9",
+          "adaptedHash": "5320c01d5fe05b34003d07731a5860fc9e449babc71f36d1434d8ae46295a7b9"
+        },
+        {
+          "path": "apps/web/tests/modules/jest-react/contract/setup.test.ts",
+          "templateHash": "584ab97ff425e1f03621f985b3b9ab3c5ed7b8948587eac63561b5c9af6574a3",
+          "adaptedHash": "584ab97ff425e1f03621f985b3b9ab3c5ed7b8948587eac63561b5c9af6574a3"
+        },
+        {
+          "path": "apps/web/tests/modules/jest-react/fit/layout.test.ts",
+          "templateHash": "12c84cd92dc93abc5cb44c3ce55b2b1632eeeef2884f9ac0abe1a0337703e48c",
+          "adaptedHash": "12c84cd92dc93abc5cb44c3ce55b2b1632eeeef2884f9ac0abe1a0337703e48c"
+        }
+      ],
+      "answers": {},
+      "adaptedAt": "2026-11-06T16:00:16.777Z"
+    },
+    {
+      "app": "api",
+      "type": "backend-framework",
+      "id": "express",
+      "version": "1.0.0",
+      "variant": "ts-node-20",
+      "adaptedFrom": null,
+      "injectedFiles": [
+        {
+          "path": "apps/api/src/http/app.ts",
+          "templateHash": "6b99fc7fc37672a560ea09438821b30fcddbdf4eb2e7c9e76e240f9851e2febd",
+          "adaptedHash": "6b99fc7fc37672a560ea09438821b30fcddbdf4eb2e7c9e76e240f9851e2febd"
+        },
+        {
+          "path": "apps/api/src/http/server.ts",
+          "templateHash": "2d4e121c6c81c522414a249aadc3938cc1b6e50d850557421c9d5659e046ea22",
+          "adaptedHash": "2d4e121c6c81c522414a249aadc3938cc1b6e50d850557421c9d5659e046ea22"
+        },
+        {
+          "path": "apps/api/tests/modules/express/contract/app.test.ts",
+          "templateHash": "eccf9a4da63a784a44159312ad7017c35c6cdb490eaf55efca7d0440f81f03a8",
+          "adaptedHash": "eccf9a4da63a784a44159312ad7017c35c6cdb490eaf55efca7d0440f81f03a8"
+        },
+        {
+          "path": "apps/api/tests/modules/express/contract/server.test.ts",
+          "templateHash": "0dbc7fbbe06b272f44208c2f7395e69c47e139d954aed446bdcf123c19d3b95c",
+          "adaptedHash": "0dbc7fbbe06b272f44208c2f7395e69c47e139d954aed446bdcf123c19d3b95c"
+        },
+        {
+          "path": "apps/api/tests/modules/express/fit/glue.test.ts",
+          "templateHash": "2c2af23afc36d8b87b5367be60db06762443eb0bfe3fa4f8cbbb93c73d44ab24",
+          "adaptedHash": "2c2af23afc36d8b87b5367be60db06762443eb0bfe3fa4f8cbbb93c73d44ab24"
+        }
+      ],
+      "answers": {
+        "PORT": "3000"
+      },
+      "adaptedAt": "2026-11-06T16:00:18.453Z"
+    },
+    {
+      "app": "api",
+      "type": "testing",
+      "id": "jest-testing",
+      "version": "1.0.0",
+      "variant": "ts-node-20",
+      "adaptedFrom": null,
+      "injectedFiles": [
+        {
+          "path": "apps/api/jest.config.js",
+          "templateHash": "76f4a93b402500b82066dc9fa5bb0a06186e57bfcd4fd9fc7b1a88effc39117a",
+          "adaptedHash": "76f4a93b402500b82066dc9fa5bb0a06186e57bfcd4fd9fc7b1a88effc39117a"
+        },
+        {
+          "path": "apps/api/src/testing/testUtils.ts",
+          "templateHash": "500ada461e6264b579156d7080bf1ebcf298bf19b627e8c9bd92588426906b1e",
+          "adaptedHash": "500ada461e6264b579156d7080bf1ebcf298bf19b627e8c9bd92588426906b1e"
+        },
+        {
+          "path": "apps/api/tests/modules/jest-testing/contract/config.test.ts",
+          "templateHash": "edf6c60147c0b57690893a6f79efeca08d8b54e58161d871b3a334c62814f8be",
+          "adaptedHash": "edf6c60147c0b57690893a6f79efeca08d8b54e58161d871b3a334c62814f8be"
+        },
+        {
+          "path": "apps/api/tests/modules/jest-testing/contract/testUtils.test.ts",
+          "templateHash": "4de493d1b500c5249f9a522988ecdbe5e8f5db3b6ca3493acac70b436141293a",
+          "adaptedHash": "4de493d1b500c5249f9a522988ecdbe5e8f5db3b6ca3493acac70b436141293a"
+        },
+        {
+          "path": "apps/api/tests/modules/jest-testing/fit/layout.test.ts",
+          "templateHash": "e66e69b69d6d15442dc87e7bbfe8eb69a56ae6269302ce153a54b75001ac794c",
+          "adaptedHash": "e66e69b69d6d15442dc87e7bbfe8eb69a56ae6269302ce153a54b75001ac794c"
+        }
+      ],
+      "answers": {},
+      "adaptedAt": "2026-11-06T16:00:20.277Z"
+    },
+    {
+      "app": "api",
+      "type": "build-tools",
+      "id": "node-build",
+      "version": "1.0.0",
+      "variant": "ts-node-20",
+      "adaptedFrom": null,
+      "injectedFiles": [
+        {
+          "path": "apps/api/scripts/build.js",
+          "templateHash": "708d9e8c60aa2b52f36b7e3712e3f7083a057e3d43f78e932245fb9a7c0695c8",
+          "adaptedHash": "708d9e8c60aa2b52f36b7e3712e3f7083a057e3d43f78e932245fb9a7c0695c8"
+        },
+        {
+          "path": "apps/api/tests/modules/node-build/contract/build.test.ts",
+          "templateHash": "367a86322516d21dffffef80fbd89de6098b5ecb63e79111cc63a11b2a671124",
+          "adaptedHash": "367a86322516d21dffffef80fbd89de6098b5ecb63e79111cc63a11b2a671124"
+        },
+        {
+          "path": "apps/api/tests/modules/node-build/fit/project.test.ts",
+          "templateHash": "8d0943e21dd059e74fc28327a85ccaf5ab34f0427fd9276d95cb50a740f7bcc5",
+          "adaptedHash": "8d0943e21dd059e74fc28327a85ccaf5ab34f0427fd9276d95cb50a740f7bcc5"
+        }
+      ],
+      "answers": {},
+      "adaptedAt": "2026-11-06T16:00:22.062Z"
+    },
+    {
+      "app": "api",
+      "type": "audit-trail",
+      "id": "audit-trail",
+      "version": "1.0.0",
+      "variant": "ts-node-20",
+      "adaptedFrom": null,
+      "injectedFiles": [
+        {
+          "path": "apps/api/src/audit/auditTrail.ts",
+          "templateHash": "da3d15305cd99548d87a1ef203af4495c23deb9612b9de7684c50342d43e5d91",
+          "adaptedHash": "da3d15305cd99548d87a1ef203af4495c23deb9612b9de7684c50342d43e5d91"
+        },
+        {
+          "path": "apps/api/src/audit/auditMiddleware.ts",
+          "templateHash": "6fa441cb5fa0dd0b5be022d79a4943e9f9667e5fa41bb15e0b65da0462dfdd51",
+          "adaptedHash": "6fa441cb5fa0dd0b5be022d79a4943e9f9667e5fa41bb15e0b65da0462dfdd51"
+        },
+        {
+          "path": "apps/api/tests/modules/audit-trail/contract/auditMiddleware.test.ts",
+          "templateHash": "15ef25f9028d6b6a95a5a910ea279f884f4f185a9afe95e29353a5d0710db5e0",
+          "adaptedHash": "15ef25f9028d6b6a95a5a910ea279f884f4f185a9afe95e29353a5d0710db5e0"
+        },
+        {
+          "path": "apps/api/tests/modules/audit-trail/contract/auditTrail.test.ts",
+          "templateHash": "51f384747dd86f02dfe451d46d1ea41c339b1f12c893be002ea7a55e9b2010bd",
+          "adaptedHash": "51f384747dd86f02dfe451d46d1ea41c339b1f12c893be002ea7a55e9b2010bd"
+        },
+        {
+          "path": "apps/api/tests/modules/audit-trail/fit/wiring.test.ts",
+          "templateHash": "728108b1923654790323852f81016c3ed05e541c05079aed74735191f69d2763",
+          "adaptedHash": "728108b1923654790323852f81016c3ed05e541c05079aed74735191f69d2763"
+        }
+      ],
+      "answers": {},
+      "adaptedAt": "2026-11-06T16:00:23.811Z"
+    },
+    {
+      "app": "api",
+      "type": "database",
+      "id": "sqlite-database",
+      "version": "1.0.0",
+      "variant": "ts-node-20",
+      "adaptedFrom": null,
+      "injectedFiles": [
+        {
+          "path": "apps/api/src/db/client.ts",
+          "templateHash": "a1f1641e38ffd04cb17e1930bd0ba3db35590bf27585ad726f3e05a4b920de04",
+          "adaptedHash": "a1f1641e38ffd04cb17e1930bd0ba3db35590bf27585ad726f3e05a4b920de04"
+        },
+        {
+          "path": "apps/api/src/db/migrate.ts",
+          "templateHash": "17a676e2412bd402c9585555983ca4c090cdaa376000fbe53bcd7853726f98f8",
+          "adaptedHash": "17a676e2412bd402c9585555983ca4c090cdaa376000fbe53bcd7853726f98f8"
+        },
+        {
+          "path": "apps/api/src/db/provider.ts",
+          "templateHash": "cc0bdf1cff009d6a24915b3794f8378862fd488e0472a70ac6812dd30a29c870",
+          "adaptedHash": "cc0bdf1cff009d6a24915b3794f8378862fd488e0472a70ac6812dd30a29c870"
+        },
+        {
+          "path": "apps/api/tests/modules/sqlite-database/contract/client.test.ts",
+          "templateHash": "51461db29430104df00a60b99b6882dd8d82d52048cc3c08f12fbbcfa7d35193",
+          "adaptedHash": "51461db29430104df00a60b99b6882dd8d82d52048cc3c08f12fbbcfa7d35193"
+        },
+        {
+          "path": "apps/api/tests/modules/sqlite-database/contract/migrate.test.ts",
+          "templateHash": "3998371ecbd516054b44e583846ccd5d9091b380bf8d64eff228b018263834cf",
+          "adaptedHash": "3998371ecbd516054b44e583846ccd5d9091b380bf8d64eff228b018263834cf"
+        },
+        {
+          "path": "apps/api/tests/modules/sqlite-database/contract/provider.test.ts",
+          "templateHash": "3b7c805b7a3d507729147b0c2fc007e09c46754c25f8dc97ab697eb8231ea8c7",
+          "adaptedHash": "3b7c805b7a3d507729147b0c2fc007e09c46754c25f8dc97ab697eb8231ea8c7"
+        },
+        {
+          "path": "apps/api/tests/modules/sqlite-database/fit/wiring.test.ts",
+          "templateHash": "c84eb277566abe30363b35dce5ae883cb2da5dbfc84ca347d50ff4a2e6c4ff0a",
+          "adaptedHash": "c84eb277566abe30363b35dce5ae883cb2da5dbfc84ca347d50ff4a2e6c4ff0a"
+        }
+      ],
+      "answers": {
+        "DATABASE_URL": "file:./data/app.db"
+      },
+      "adaptedAt": "2026-11-06T16:00:25.779Z"
+    },
+    {
+      "app": "api",
+      "type": "orm",
+      "id": "drizzle-sqlite",
+      "version": "1.0.0",
+      "variant": "ts-node-20",
+      "adaptedFrom": null,
+      "injectedFiles": [
+        {
+          "path": "apps/api/src/db/orm.ts",
+          "templateHash": "acbbe933f57ad1ab229bba83c316b9b42a2f0a72d364f46496bb72e6e3fe3521",
+          "adaptedHash": "acbbe933f57ad1ab229bba83c316b9b42a2f0a72d364f46496bb72e6e3fe3521"
+        },
+        {
+          "path": "apps/api/src/db/schema.ts",
+          "templateHash": "dc9f1881e48756b895e47264118cf55e7617d980e3aef75d82c84f88854fe054",
+          "adaptedHash": "dc9f1881e48756b895e47264118cf55e7617d980e3aef75d82c84f88854fe054"
+        },
+        {
+          "path": "apps/api/tests/modules/drizzle-sqlite/contract/orm.test.ts",
+          "templateHash": "4d5f01b3f6a65eda2c37f53e5e4691e7075f139b5c75b5d54c67485af9e19f3c",
+          "adaptedHash": "4d5f01b3f6a65eda2c37f53e5e4691e7075f139b5c75b5d54c67485af9e19f3c"
+        },
+        {
+          "path": "apps/api/tests/modules/drizzle-sqlite/fit/schema.test.ts",
+          "templateHash": "1910221eb44d7a47ed97181be8b352c500b8fa0a257d1a0cc6781b31a3eaa286",
+          "adaptedHash": "1910221eb44d7a47ed97181be8b352c500b8fa0a257d1a0cc6781b31a3eaa286"
+        }
+      ],
+      "answers": {},
+      "adaptedAt": "2026-11-06T16:00:27.508Z"
+    },
+    {
+      "app": "api",
+      "type": "auth",
+      "id": "jwt-auth",
+      "version": "1.0.0",
+      "variant": "ts-node-20",
+      "adaptedFrom": null,
+      "injectedFiles": [
+        {
+          "path": "apps/api/src/auth/jwt.ts",
+          "templateHash": "7a33ec15faf7c258b4e85c03a81deec85c1c844240a224f639d4695182709e73",
+          "adaptedHash": "7a33ec15faf7c258b4e85c03a81deec85c1c844240a224f639d4695182709e73"
+        },
+        {
+          "path": "apps/api/src/auth/authMiddleware.ts",
+          "templateHash": "717fd7043fed0031359d3a943595702576b1551ad99da736ac9916d27a7423ce",
+          "adaptedHash": "717fd7043fed0031359d3a943595702576b1551ad99da736ac9916d27a7423ce"
+        },
+        {
+          "path": "apps/api/tests/modules/jwt-auth/contract/authMiddleware.test.ts",
+          "templateHash": "f637b3190bdc27e0f313a991a5dafa3e41f3b6d07a63ba76b4da4b318c1a633c",
+          "adaptedHash": "f637b3190bdc27e0f313a991a5dafa3e41f3b6d07a63ba76b4da4b318c1a633c"
+        },
+        {
+          "path": "apps/api/tests/modules/jwt-auth/contract/jwt.test.ts",
+          "templateHash": "b1065da009668cd80e75dd056e5eeb9cab4caa2b73bf0fbbda1cd24e288e98e7",
+          "adaptedHash": "b1065da009668cd80e75dd056e5eeb9cab4caa2b73bf0fbbda1cd24e288e98e7"
+        },
+        {
+          "path": "apps/api/tests/modules/jwt-auth/fit/default.test.ts",
+          "templateHash": "a956cb5212567ca50254053e30b57b54e9788773e71d5e6bb2b1f09c75ed6f7c",
+          "adaptedHash": "a956cb5212567ca50254053e30b57b54e9788773e71d5e6bb2b1f09c75ed6f7c"
+        }
+      ],
+      "answers": {
+        "JWT_SECRET": "<secret: set in env>"
+      },
+      "adaptedAt": "2026-11-06T16:00:29.323Z"
+    },
+    {
+      "app": "api",
+      "type": "multi-tenancy",
+      "id": "multi-tenant",
+      "version": "1.0.0",
+      "variant": "ts-node-20",
+      "adaptedFrom": null,
+      "injectedFiles": [
+        {
+          "path": "apps/api/src/tenancy/tenantDb.ts",
+          "templateHash": "697a25d635f1dcdb91e4fc3b9c25f7dc84425d1a293b359e9596db01d621f343",
+          "adaptedHash": "697a25d635f1dcdb91e4fc3b9c25f7dc84425d1a293b359e9596db01d621f343"
+        },
+        {
+          "path": "apps/api/src/tenancy/tenantContext.ts",
+          "templateHash": "9c409ddfa7428069038ef09d47a19456f27a862800d5a8ba6603c8d47bf5350a",
+          "adaptedHash": "9c409ddfa7428069038ef09d47a19456f27a862800d5a8ba6603c8d47bf5350a"
+        },
+        {
+          "path": "apps/api/tests/modules/multi-tenant/contract/guards.test.ts",
+          "templateHash": "2e4863f47c51a25ec8871979c36a791619880e45170b8c2634a496ecafd9bcbd",
+          "adaptedHash": "2e4863f47c51a25ec8871979c36a791619880e45170b8c2634a496ecafd9bcbd"
+        },
+        {
+          "path": "apps/api/tests/modules/multi-tenant/contract/isolation.test.ts",
+          "templateHash": "89aace2aad4add40a98a9c28be150386d7063624c14f409bd3be82cc2ec87a07",
+          "adaptedHash": "89aace2aad4add40a98a9c28be150386d7063624c14f409bd3be82cc2ec87a07"
+        },
+        {
+          "path": "apps/api/tests/modules/multi-tenant/fit/wiring.test.ts",
+          "templateHash": "dd3fc5d8efc4bfabe7db36a09075b8fbe118a529ce103d461348c1db44a5f676",
+          "adaptedHash": "dd3fc5d8efc4bfabe7db36a09075b8fbe118a529ce103d461348c1db44a5f676"
+        }
+      ],
+      "answers": {},
+      "adaptedAt": "2026-11-06T16:00:31.027Z"
+    },
+    {
+      "app": "api",
+      "type": "server-cache",
+      "id": "memory-cache",
+      "version": "1.0.0",
+      "variant": "ts-node-20",
+      "adaptedFrom": null,
+      "injectedFiles": [
+        {
+          "path": "apps/api/src/cache/memoryCache.ts",
+          "templateHash": "b0d5375c47fd93b779de2ccebd00aecd0cb48aad9ba781b39e6b7e7e46ec5d4b",
+          "adaptedHash": "b0d5375c47fd93b779de2ccebd00aecd0cb48aad9ba781b39e6b7e7e46ec5d4b"
+        },
+        {
+          "path": "apps/api/src/cache/cacheMiddleware.ts",
+          "templateHash": "5bfd569fe8d438fc0d2615b8b7a563774d059d648d7f97790f49314feb26a22f",
+          "adaptedHash": "5bfd569fe8d438fc0d2615b8b7a563774d059d648d7f97790f49314feb26a22f"
+        },
+        {
+          "path": "apps/api/tests/modules/memory-cache/contract/cacheMiddleware.test.ts",
+          "templateHash": "cfd6e87eb0c910bcbdcb85b62a37413d23e2a8e4674c873c1631811f1feecf76",
+          "adaptedHash": "cfd6e87eb0c910bcbdcb85b62a37413d23e2a8e4674c873c1631811f1feecf76"
+        },
+        {
+          "path": "apps/api/tests/modules/memory-cache/contract/memoryCache.test.ts",
+          "templateHash": "69db6bf6cd1dd1a022e5b94f4f27ee7c9b2b95969278cfa18dd5cce28b82ed81",
+          "adaptedHash": "69db6bf6cd1dd1a022e5b94f4f27ee7c9b2b95969278cfa18dd5cce28b82ed81"
+        },
+        {
+          "path": "apps/api/tests/modules/memory-cache/fit/ttl.test.ts",
+          "templateHash": "7692a46f73c794acbc39f1cc9135d329edc5aacd9226213f98d7e32cc862aa42",
+          "adaptedHash": "7692a46f73c794acbc39f1cc9135d329edc5aacd9226213f98d7e32cc862aa42"
+        }
+      ],
+      "answers": {
+        "CACHE_TTL_SECONDS": "30"
+      },
+      "adaptedAt": "2026-11-06T16:00:32.898Z"
+    }
+  ]
+}
