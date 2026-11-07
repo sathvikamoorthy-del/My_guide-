@@ -1,0 +1,50 @@
+{
+  "entity_type": "workItem",
+  "entity_id": "WI-007",
+  "assigned_to": "EackSUlFzsWHlVljpQWgdDETfhs1",
+  "status": "pending",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single_choice",
+      "text": "The api has no answers or sources yet (only a starter 'settings' table). How should POST /reports check that the reported answer or source exists (the 404 rule)?",
+      "options": [
+        "Add minimal answers and sources tables in the api now (tenant-scoped, id only), to be filled by the conversation feature later",
+        "Wait: build this after the conversation feature that stores answers and sources",
+        "Store the target id without an existence check for now (404 rule deferred)"
+      ],
+      "allowOther": true,
+      "reason": "Acceptance criteria 9 and 10 need the targets to exist in the user's tenant; no feature stores them yet, and each option changes the schema and the plan.",
+      "required": true,
+      "answer": null,
+      "answered_by": null,
+      "answered_at": null
+    },
+    {
+      "id": "q2",
+      "type": "single_choice",
+      "text": "There is no personal-data deletion flow in the api yet. How should 'delete all of a user's reports when their personal data is deleted' (criterion 14) be delivered?",
+      "options": [
+        "Provide a tenant-scoped function that deletes a user's reports, to be called by the deletion flow when it is built (tested on its own)",
+        "Build an internal endpoint now that deletes a user's reports",
+        "Defer criterion 14 to the data-deletion feature"
+      ],
+      "allowOther": true,
+      "reason": "The deletion flow belongs to the Data and consent controls feature, which does not exist yet; how criterion 14 is met changes what this work item delivers.",
+      "required": true,
+      "answer": null,
+      "answered_by": null,
+      "answered_at": null
+    },
+    {
+      "id": "q3",
+      "type": "yes_no",
+      "text": "Should this work item also build the report button and dialog in the web app (as shown in mock.md), or only the API?",
+      "reason": "The requirement scope is 'one authenticated API endpoint', but mock.md shows the web dialog; adding web makes the web app (APP-017) a second application of this work item.",
+      "required": true,
+      "answer": null,
+      "answered_by": null,
+      "answered_at": null
+    }
+  ]
+}
