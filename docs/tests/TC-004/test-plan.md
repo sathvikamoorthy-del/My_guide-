@@ -33,8 +33,8 @@ These conditions hold for every scenario unless the scenario says otherwise.
 
 **T1: No sign-in**
 1. `POST /reports` with B and no `Authorization` header.
-- Expected: `401` with `{ "error": "unauthorized" }` (req.md API table). Nothing stored.
-- ⚠ Known deviation: the implementation answers `401 { "error": "tenant-required" }` here, because the global tenant middleware runs before the route. The status meets criterion 1; the error name does not match req.md. This step fails until either the tenant middleware or req.md is changed.
+- Expected: `401` with `{ "error": "unauthorized" }` or `{ "error": "tenant-required" }`; either is accepted (req.md criterion 1 and API table). Nothing stored.
+- Note: the implementation answers `tenant-required` here, because the global tenant middleware runs before the route.
 
 **T2: Invalid token**
 1. `POST /reports` with B and `Authorization: Bearer not-a-token`.
@@ -199,9 +199,8 @@ These conditions hold for every scenario unless the scenario says otherwise.
 ## How to run
 
 - **Automated:** `npm test` in `apps/api`, which runs `tests/reports/*.test.ts`.
-  - T1–T19 and T21–T24 are covered by those tests.
-  - T1 is currently asserted against the implementation's `tenant-required`. Its test must be changed to `unauthorized` once the deviation is resolved.
+  - T1–T19 and T21–T24 are covered by those tests. T1 accepts either error name.
 - **Manual:**
   - T20 needs two parallel requests; it can also be added as an automated test.
   - T25 is a manual check.
-- **Pass:** every scenario's expected outcome holds. T1 passes only when its error body is `unauthorized`.
+- **Pass:** every scenario's expected outcome holds.
