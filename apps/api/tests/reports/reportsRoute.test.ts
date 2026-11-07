@@ -53,8 +53,11 @@ const report = { targetType: 'answer', targetId: 'ans-1', problemType: 'outdated
 
 describe('POST /reports', () => {
   it('rejects a request without sign-in or with a bad token (401) and stores nothing', async () => {
-    // no token: the global tenant middleware (before the route) answers first, still with 401
-    expect(await call('POST', '/reports', { body: report })).toEqual({ status: 401, body: { error: 'tenant-required' } });
+    // no token: 401 with "unauthorized" or "tenant-required" (REQ-169 criterion 1 accepts either; the global tenant
+    // middleware runs before the route and answers "tenant-required")
+    const anonymous = await call('POST', '/reports', { body: report });
+    expect(anonymous.status).toBe(401);
+    expect(['unauthorized', 'tenant-required']).toContain(anonymous.body.error);
     expect(await call('POST', '/reports', { body: report, token: 'not-a-token' })).toEqual({ status: 401, body: { error: 'unauthorized' } });
     const otherKey = await signToken({ userId: 'user-1', tenantId: 'org-a' }, { secret: 'another-secret-that-is-also-32-chars-long!' });
     expect((await call('POST', '/reports', { body: report, token: otherKey })).status).toBe(401);
