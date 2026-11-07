@@ -95,7 +95,8 @@ Request body:
 | Outcome | Status | Body |
 |---|---|---|
 | Report stored | `201 Created` | `{ "id": "…", "status": "open" }` |
-| No or invalid sign-in | `401 Unauthorized` | `{ "error": "unauthorized" }` |
+| No sign-in (no `Authorization` header) | `401 Unauthorized` | `{ "error": "unauthorized" }` or `{ "error": "tenant-required" }` (either is accepted) |
+| Invalid sign-in (bad or expired token) | `401 Unauthorized` | `{ "error": "unauthorized" }` |
 | No tenant on the signed-in identity | `401 Unauthorized` | `{ "error": "tenant-required" }` |
 | Invalid input | `400 Bad Request` | `{ "error": "invalid-request", "fields": { "<field>": "<message>" } }` |
 | Target not found in the user's tenant | `404 Not Found` | `{ "error": "target-not-found" }` |
@@ -105,7 +106,7 @@ No error stores anything.
 
 ## Acceptance criteria
 
-1. A request without a valid sign-in is rejected with 401 and no report is stored.
+1. A request without a valid sign-in is rejected with 401 and no report is stored. With no sign-in at all, the error is `unauthorized` or `tenant-required` (either is accepted); with an invalid token it is `unauthorized`.
 2. A signed-in user can report a whole answer in their tenant; the API responds 201 with the new report's id and status `open`.
 3. A signed-in user can report a source reference or link in their tenant; the API responds 201 with the new report's id and status `open`.
 4. `problemType` is required and must be one of `incorrect`, `outdated`, `missing-details`, `broken-link`, `other`; any other value is rejected with 400 and nothing is stored.
