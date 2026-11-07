@@ -2,7 +2,7 @@
   "entity_type": "workItem",
   "entity_id": "WI-007",
   "assigned_to": "EackSUlFzsWHlVljpQWgdDETfhs1",
-  "status": "pending",
+  "status": "completed",
   "questions": [
     {
       "id": "q1",
@@ -16,9 +16,10 @@
       "allowOther": true,
       "reason": "Acceptance criteria 9 and 10 need the targets to exist in the user's tenant; no feature stores them yet, and each option changes the schema and the plan.",
       "required": true,
-      "answer": null,
-      "answered_by": null,
-      "answered_at": null
+      "answer": "Add minimal answers and sources tables in the api now (tenant-scoped, id only), to be filled by the conversation feature later",
+      "answered_by": "EackSUlFzsWHlVljpQWgdDETfhs1",
+      "answered_at": "2026-11-07T04:14:02.000Z",
+      "other": null
     },
     {
       "id": "q2",
@@ -32,9 +33,10 @@
       "allowOther": true,
       "reason": "The deletion flow belongs to the Data and consent controls feature, which does not exist yet; how criterion 14 is met changes what this work item delivers.",
       "required": true,
-      "answer": null,
-      "answered_by": null,
-      "answered_at": null
+      "answer": "Provide a tenant-scoped function that deletes a user's reports, to be called by the deletion flow when it is built (tested on its own)",
+      "answered_by": "EackSUlFzsWHlVljpQWgdDETfhs1",
+      "answered_at": "2026-11-07T04:14:02.000Z",
+      "other": null
     },
     {
       "id": "q3",
@@ -42,9 +44,10 @@
       "text": "Should this work item also build the report button and dialog in the web app (as shown in mock.md), or only the API?",
       "reason": "The requirement scope is 'one authenticated API endpoint', but mock.md shows the web dialog; adding web makes the web app (APP-017) a second application of this work item.",
       "required": true,
-      "answer": null,
-      "answered_by": null,
-      "answered_at": null
+      "answer": "No",
+      "answered_by": "EackSUlFzsWHlVljpQWgdDETfhs1",
+      "answered_at": "2026-11-07T04:14:02.000Z",
+      "other": null
     }
   ]
 }
