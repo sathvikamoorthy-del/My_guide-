@@ -1,0 +1,180 @@
+{
+  "entity_type": "requirement",
+  "entity_id": "REQ-169",
+  "assigned_to": "EackSUlFzsWHlVljpQWgdDETfhs1",
+  "status": "pending",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "multi_choice",
+      "text": "What can a user report?",
+      "options": [
+        "A whole answer in a conversation",
+        "A single section of an answer (e.g. eligibility, documents, fees)",
+        "A source reference / link",
+        "An item in a saved action plan",
+        "A published public article"
+      ],
+      "allowOther": true,
+      "reason": "The decision says \"an answer or a source\", but answers are made of dynamic sections and also appear in action plans and public articles; the target model depends on this.",
+      "required": true,
+      "answer": null,
+      "answered_by": null,
+      "answered_at": null
+    },
+    {
+      "id": "q2",
+      "type": "multi_choice",
+      "text": "Which problem types should the user choose from?",
+      "options": [
+        "Incorrect information",
+        "Outdated information",
+        "Missing details",
+        "Broken or wrong link",
+        "Other (free text)"
+      ],
+      "allowOther": true,
+      "reason": "The decision names three types; the blueprint also mentions outdated links. The allowed list is validated by the API.",
+      "required": true,
+      "answer": null,
+      "answered_by": null,
+      "answered_at": null
+    },
+    {
+      "id": "q3",
+      "type": "single_choice",
+      "text": "Is a free-text description from the user required?",
+      "options": [
+        "Required",
+        "Optional",
+        "Required only for \"Other\""
+      ],
+      "allowOther": false,
+      "reason": "It changes validation and how useful a report is to the reviewer.",
+      "required": true,
+      "answer": null,
+      "answered_by": null,
+      "answered_at": null
+    },
+    {
+      "id": "q4",
+      "type": "text",
+      "text": "What is the maximum length of the description (characters)?",
+      "reason": "Needed for validation; not stated anywhere.",
+      "required": false,
+      "answer": null,
+      "answered_by": null,
+      "answered_at": null
+    },
+    {
+      "id": "q5",
+      "type": "yes_no",
+      "text": "Can the user suggest the correct information or a better source (a separate field)?",
+      "reason": "A suggested correction is a separate field and helps the review, but it is not mentioned in the decision.",
+      "required": true,
+      "answer": null,
+      "answered_by": null,
+      "answered_at": null
+    },
+    {
+      "id": "q6",
+      "type": "single_choice",
+      "text": "What happens if the same user reports the same target again?",
+      "options": [
+        "Allow it (each report is stored)",
+        "Reject while their earlier report is still open",
+        "Merge into the earlier report"
+      ],
+      "allowOther": true,
+      "reason": "Duplicate handling is not defined and affects the API response and storage.",
+      "required": true,
+      "answer": null,
+      "answered_by": null,
+      "answered_at": null
+    },
+    {
+      "id": "q7",
+      "type": "multi_choice",
+      "text": "What can the reporter see or do after submitting?",
+      "options": [
+        "Nothing beyond the confirmation",
+        "List their own reports",
+        "See the status of their reports",
+        "Edit or withdraw a report while it is open",
+        "Be notified when it is resolved"
+      ],
+      "allowOther": true,
+      "reason": "Decides whether this requirement needs more than the create endpoint.",
+      "required": true,
+      "answer": null,
+      "answered_by": null,
+      "answered_at": null
+    },
+    {
+      "id": "q8",
+      "type": "yes_no",
+      "text": "Should the team's review (list, filter, change status of reports) be part of this requirement?",
+      "reason": "The decision says \"review later\"; it is unclear whether the review API belongs here or to the admin features in blueprint section 11.",
+      "required": true,
+      "answer": null,
+      "answered_by": null,
+      "answered_at": null
+    },
+    {
+      "id": "q9",
+      "type": "yes_no",
+      "text": "Should a report keep a copy of the reported answer or source as it was at the time of reporting?",
+      "reason": "Answers are generated dynamically and sources change; without a copy a later reviewer may not see what the user saw. A copy can also contain personal details.",
+      "required": true,
+      "answer": null,
+      "answered_by": null,
+      "answered_at": null
+    },
+    {
+      "id": "q10",
+      "type": "yes_no",
+      "text": "May a user report only answers and sources that were shown to them (in their own conversations)?",
+      "reason": "Decides whether the API must check the target against the user's own history before accepting a report.",
+      "required": true,
+      "answer": null,
+      "answered_by": null,
+      "answered_at": null
+    },
+    {
+      "id": "q11",
+      "type": "text",
+      "text": "What is the tenant for a report: one organisation per tenant, or one tenant for all My Guide users?",
+      "reason": "The API app uses row-level multi-tenancy; the tenant boundary decides who can see a report.",
+      "required": true,
+      "answer": null,
+      "answered_by": null,
+      "answered_at": null
+    },
+    {
+      "id": "q12",
+      "type": "single_choice",
+      "text": "Should there be a limit on how many reports one user can submit?",
+      "options": [
+        "No limit",
+        "A per-user rate limit (e.g. per hour)",
+        "A per-user daily cap"
+      ],
+      "allowOther": true,
+      "reason": "Abuse protection is not defined; it changes the API's behaviour (429 responses).",
+      "required": false,
+      "answer": null,
+      "answered_by": null,
+      "answered_at": null
+    },
+    {
+      "id": "q13",
+      "type": "long_text",
+      "text": "How long are reports kept, and should they be deleted with the user's data when they ask for deletion?",
+      "reason": "Reports can contain personal details (in the description and the snapshot); the blueprint has data deletion controls but no rule for reports.",
+      "required": true,
+      "answer": null,
+      "answered_by": null,
+      "answered_at": null
+    }
+  ]
+}
