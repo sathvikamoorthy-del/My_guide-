@@ -48,8 +48,8 @@ Both are checked against REQ-264 acceptance criteria 1–10 and the WI-015 answe
 ## Automated coverage
 
 The scenarios are automated in `apps/api/tests/freeQueries/`:
-- `freeQueriesRoute.test.ts`: S1, S2, S4, S6–S9, S15 and S16.
-- `freeQueriesStore.test.ts`: S3, S5, S10–S14 and S17.
+- `freeQueriesRoute.test.ts`: S1–S9, S11, S15 and S16.
+- `freeQueriesStore.test.ts`: S3, S5, S10, S12–S14 and S17.
 
 S18 is a one-off check of the tests themselves. It was run during WI-015: 3 route tests failed without the header.
 
