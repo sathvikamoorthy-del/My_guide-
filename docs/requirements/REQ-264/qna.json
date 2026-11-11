@@ -1,0 +1,80 @@
+{
+  "entity_type": "requirement",
+  "entity_id": "REQ-264",
+  "assigned_to": "EackSUlFzsWHlVljpQWgdDETfhs1",
+  "status": "pending",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single_choice",
+      "text": "What event uses up one free query?",
+      "options": [
+        "Every query the user submits",
+        "Only a query that ends with a completed action plan",
+        "Only a query that would otherwise be charged"
+      ],
+      "allowOther": true,
+      "reason": "The decision says to show the remaining balance but not what reduces it; the blueprint suggests charging only on completion.",
+      "required": true,
+      "answer": null,
+      "answered_by": null,
+      "answered_at": null
+    },
+    {
+      "id": "q2",
+      "type": "yes_no",
+      "text": "Should existing users (created before this feature ships) also start with two free queries?",
+      "reason": "The decision only mentions new users; existing accounts need a defined starting balance.",
+      "required": true,
+      "answer": null,
+      "answered_by": null,
+      "answered_at": null
+    },
+    {
+      "id": "q3",
+      "type": "single_choice",
+      "text": "Do queries a person made as a guest (before signing in) count against their free queries?",
+      "options": [
+        "No, the count starts at sign-up",
+        "Yes, guest queries are carried over when they sign in"
+      ],
+      "allowOther": true,
+      "reason": "The blueprint allows guest-first access, but the decision covers only signed-in users.",
+      "required": true,
+      "answer": null,
+      "answered_by": null,
+      "answered_at": null
+    },
+    {
+      "id": "q4",
+      "type": "multi_choice",
+      "text": "Besides the remaining count, what should the API response include?",
+      "options": [
+        "Nothing else",
+        "Total free allowance",
+        "Number of free queries used"
+      ],
+      "allowOther": true,
+      "reason": "This decides the response shape; the decision only names the remaining count.",
+      "required": false,
+      "answer": null,
+      "answered_by": null,
+      "answered_at": null
+    },
+    {
+      "id": "q5",
+      "type": "single_choice",
+      "text": "Is the starting allowance of 2 fixed, or should it be stored as a configurable value?",
+      "options": [
+        "Fixed at 2 for now",
+        "Configurable value (no admin UI in this requirement)"
+      ],
+      "allowOther": true,
+      "reason": "The blueprint lists admin-managed free-query allowances as a separate feature; this decides whether to plan for it now.",
+      "required": true,
+      "answer": null,
+      "answered_by": null,
+      "answered_at": null
+    }
+  ]
+}
