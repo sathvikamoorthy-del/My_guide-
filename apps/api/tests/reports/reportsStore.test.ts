@@ -21,7 +21,7 @@ const rows = async (db: Db) => (await db.execute('SELECT * FROM reports ORDER BY
 describe('reports store', () => {
   it('migration 0001_reports applies once', async () => {
     const db = createDb({ url: ':memory:' });
-    expect(await migrate(db, migrations)).toEqual(['0001_reports']);
+    expect(await migrate(db, migrations)).toEqual(['0001_reports', '0002_free_queries']);
     expect(await migrate(db, migrations)).toEqual([]);
   });
 

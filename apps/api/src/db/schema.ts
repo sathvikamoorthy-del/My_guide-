@@ -37,3 +37,14 @@ export const reports = sqliteTable('reports', {
 });
 
 export type Report = typeof reports.$inferSelect;
+
+// REQ-264 / WI-015 (migration 0002_free_queries). Tenant table: one row per query that used a free query. Read and write it
+// through the tenant-scoped data access (src/freeQueries/freeQueriesStore.ts).
+export const freeQueryUses = sqliteTable('free_query_uses', {
+  tenantId: text('tenant_id').notNull(),
+  queryId: text('query_id').notNull(),
+  userId: text('user_id').notNull(),
+  usedAt: text('used_at').notNull()
+}, (t) => ({ pk: primaryKey({ columns: [t.tenantId, t.queryId] }) }));
+
+export type FreeQueryUse = typeof freeQueryUses.$inferSelect;

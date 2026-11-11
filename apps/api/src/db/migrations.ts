@@ -23,4 +23,21 @@ CREATE UNIQUE INDEX reports_one_open_per_user_target ON reports (tenant_id, repo
 CREATE INDEX reports_by_tenant_status ON reports (tenant_id, status)`
 };
 
-export const migrations: Migration[] = [reports];
+// REQ-264 / WI-015: free queries. `settings` is in the schema but no earlier migration created it, hence IF NOT EXISTS; the
+// allowance is its row `free_query_allowance` (no row = the default of 2). `free_query_uses` is a tenant table with one row
+// per query that used a free query; the primary key makes recording a query twice impossible.
+const freeQueries: Migration = {
+  id: '0002_free_queries',
+  sql: `
+CREATE TABLE IF NOT EXISTS settings (key TEXT PRIMARY KEY, value TEXT NOT NULL, updated_at INTEGER NOT NULL);
+CREATE TABLE free_query_uses (
+  tenant_id TEXT NOT NULL,
+  query_id TEXT NOT NULL,
+  user_id TEXT NOT NULL,
+  used_at TEXT NOT NULL,
+  PRIMARY KEY (tenant_id, query_id)
+);
+CREATE INDEX free_query_uses_by_user ON free_query_uses (tenant_id, user_id)`
+};
+
+export const migrations: Migration[] = [reports, freeQueries];
