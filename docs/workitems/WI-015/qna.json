@@ -1,0 +1,54 @@
+{
+  "entity_type": "workItem",
+  "entity_id": "WI-015",
+  "assigned_to": "EackSUlFzsWHlVljpQWgdDETfhs1",
+  "status": "pending",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single_choice",
+      "text": "The API has no conversation or action-plan code yet, so nothing can report 'query ended with a completed action plan'. How should this work item record free-query use?",
+      "options": [
+        "Add a recording function (one use per query id, safe to call twice) that the future conversation feature calls; tests call it directly",
+        "Also add an internal endpoint to record a use",
+        "Wait until the conversation feature exists and build both together"
+      ],
+      "allowOther": true,
+      "reason": "Requirement criteria 5 and 6 depend on an event the codebase does not produce yet; this decides what WI-015 builds and how it is tested.",
+      "required": true,
+      "answer": null,
+      "answered_by": null,
+      "answered_at": null
+    },
+    {
+      "id": "q2",
+      "type": "single_choice",
+      "text": "The API scopes all data to a tenant. Is a user's free-query count per tenant or one count across all their tenants?",
+      "options": [
+        "Per tenant (each tenant gives its own 2 free queries)",
+        "One count per user across all tenants"
+      ],
+      "allowOther": true,
+      "reason": "All existing data access is tenant-scoped (reports, multi-tenant module); the requirement does not mention tenants, and the answer changes the table design and the balance a user sees.",
+      "required": true,
+      "answer": null,
+      "answered_by": null,
+      "answered_at": null
+    },
+    {
+      "id": "q3",
+      "type": "single_choice",
+      "text": "Where should the configurable allowance (default 2) be set?",
+      "options": [
+        "One global value in the existing settings table",
+        "Per tenant, falling back to a global default of 2"
+      ],
+      "allowOther": true,
+      "reason": "REQ-264 says the allowance is configurable but not at what level; the settings table is global while user data is per tenant.",
+      "required": true,
+      "answer": null,
+      "answered_by": null,
+      "answered_at": null
+    }
+  ]
+}
