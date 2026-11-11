@@ -2,7 +2,7 @@
   "entity_type": "workItem",
   "entity_id": "WI-015",
   "assigned_to": "EackSUlFzsWHlVljpQWgdDETfhs1",
-  "status": "pending",
+  "status": "completed",
   "questions": [
     {
       "id": "q1",
@@ -16,9 +16,10 @@
       "allowOther": true,
       "reason": "Requirement criteria 5 and 6 depend on an event the codebase does not produce yet; this decides what WI-015 builds and how it is tested.",
       "required": true,
-      "answer": null,
-      "answered_by": null,
-      "answered_at": null
+      "answer": "Add a recording function (one use per query id, safe to call twice) that the future conversation feature calls; tests call it directly",
+      "answered_by": "EackSUlFzsWHlVljpQWgdDETfhs1",
+      "answered_at": "2026-11-11T06:17:42.000Z",
+      "other": null
     },
     {
       "id": "q2",
@@ -31,9 +32,10 @@
       "allowOther": true,
       "reason": "All existing data access is tenant-scoped (reports, multi-tenant module); the requirement does not mention tenants, and the answer changes the table design and the balance a user sees.",
       "required": true,
-      "answer": null,
-      "answered_by": null,
-      "answered_at": null
+      "answer": "Per tenant (each tenant gives its own 2 free queries)",
+      "answered_by": "EackSUlFzsWHlVljpQWgdDETfhs1",
+      "answered_at": "2026-11-11T06:17:42.000Z",
+      "other": null
     },
     {
       "id": "q3",
@@ -46,9 +48,10 @@
       "allowOther": true,
       "reason": "REQ-264 says the allowance is configurable but not at what level; the settings table is global while user data is per tenant.",
       "required": true,
-      "answer": null,
-      "answered_by": null,
-      "answered_at": null
+      "answer": "One global value in the existing settings table",
+      "answered_by": "EackSUlFzsWHlVljpQWgdDETfhs1",
+      "answered_at": "2026-11-11T06:17:42.000Z",
+      "other": null
     }
   ]
 }
